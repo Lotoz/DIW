@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de &lt;dialog&gt;</title>
+</head>
+
+<body>
+    <nav>Para saltar entre ejercicios.
+        <ol type="A">
+            <li><a href="GrippiZamira_02-03_etiquetas_HTML_comunes_listas.html">Ejercicios de listas</a> (1-5)</li>
+            <li><a href="GrippiZamira_02-03.html">Ejercicio de details </a>(Ejercicio 6)</li>
+            <li><a href="GrippiZamira_02-03Ejercicio7.html">Ejercicio de dialog</a> (Ejercicio7)</li>
+            <li><a href=""></a></li>
+        </ol>
+    </nav>
+    <button id="abrir">Abrir diálogo</button>
+    <dialog id="miDialogo">
+        <h2>Ventana emergente</h2>
+        <p>Este es un mensaje dentro del cuadro de diálogo.</p>
+        <button id="cerrar">Cerrar</button>
+    </dialog>
+    <button id="boton1">Dale a este!</button>
+    <dialog id="pinguino">
+        <h2>Ventana emergente</h2>
+        <p>Mira un pinguino
+            <img src="./assets/pingüino.jpg" width="100x100"/>
+        </p>
+        <button id="cerrar1">Cerrar</button>
+    </dialog>
+    <button id="boton2">¿Cómo murió el programador en la ducha?</button>
+    <dialog id="chisteMalo">
+        <h2>Chiste malo emergente!</h2>
+        <p>Leyó las instrucciones del champú: Enjabonar. Enjuagar. Repetir.</p>
+        <button id="cerrar2">Cerrar</button>
+    </dialog>
+    <button id="boton3">Que es una API?</button>
+    <dialog id="pregunta">
+        <h2>Ventana emergente</h2>
+        <p> conjunto de reglas y protocolos que permite a dos programas de software diferentes comunicarse e intercambiar datos entre si.</p>
+        <button id="cerrar3">Cerrar</button>
+    </dialog>
+    <script>
+        const dialogo = document.getElementById("miDialogo");
+        document.getElementById("abrir").addEventListener("click", () => dialogo.showModal());
+        document.getElementById("cerrar").addEventListener("click", () => dialogo.close());
+        //botones mios
+        const pinguino = document.getElementById("pinguino");
+        document.getElementById("boton1").addEventListener("click", () => pinguino.showModal());
+        document.getElementById("cerrar1").addEventListener("click", () => pinguino.close());
+
+        const chisteMalo = document.getElementById("chisteMalo");
+        document.getElementById("boton2").addEventListener("click", () => chisteMalo.showModal());
+        document.getElementById("cerrar2").addEventListener("click", () => chisteMalo.close());
+        
+        const pregunta = document.getElementById('pregunta');
+        document.getElementById("boton3").addEventListener("click", () => pregunta.showModal());
+        document.getElementById("cerrar3").addEventListener("click", () => pregunta.close());
+    </script>
+</body>
+
+</html>
