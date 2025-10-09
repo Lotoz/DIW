@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="navegador">Para saltar entre ejercicios.
+        <ol type="A">
+            <li><a href="GrippiZamira_02-03_etiquetas_HTML_comunes_listas.html">Ejercicios de listas</a> (1-5)</li>
+            <li><a href="GrippiZamira_02-03.html">Ejercicio de details </a>(Ejercicio 6)</li>
+            <li><a href="GrippiZamira_02-03Ejercicio7.html">Ejercicio de dialog</a> (Ejercicio7)</li>
+            <li><a href="GrippiZamira_02-03_Ejercicio8.html">Centro de ayuda</a> (Ejercicio8)</li>
+            <li><a href="GrippiZamira_02-03_Ejercicio9_Galeria.html">Galeria</a> (Ejercicio 9)</li>
+        </ol>
+    </nav>
+    <h1>Galeria interactiva</h1>
+    <p>Haz click en una de las imagenes para ver mas detalles.</p>
+    <div class="galeria">
+        <button id="imagen1"><img src="./assets/pinguino-albino.jpg" /></button>
+        <dialog id="pinguinoAlbino">
+            <img src="./assets/pinguino-albino.jpg" />
+            <details>
+                <summary> Descripcion</summary>
+                <p>Es un pinguino albino</p>
+            </details>
+            <button id="cerrar1" class="cerrar">Cerrar</button>
+        </dialog>
+
+        <button id="imagen2"><img src="./assets/pinguinoReal.jpg" /></button>
+        <dialog id="pinguinoReal">
+            <img src="./assets/pinguinoReal.jpg" />
+            <details>
+                <summary> Descripcion</summary>
+                <p>Es un pinguino real</p>
+            </details>
+            <button id="cerrar2" class="cerrar">Cerrar</button>
+        </dialog>
+
+        <button id="imagen3"><img src="./assets/pingüino.jpg" /></button>
+        <dialog id="pinguino">
+            <img src="./assets/pingüino.jpg" />
+            <details>
+                <summary> Descripcion</summary>
+                <p>Es un pinguino</p>
+            </details>
+            <button id="cerrar3" class="cerrar">Cerrar</button>
+        </dialog>
+    </div>
+
+
+    <script>
+        //Imagen 1
+        const dialogo = document.getElementById("pinguinoAlbino");
+        document.getElementById("imagen1").addEventListener("click", () => dialogo.showModal());
+        document.getElementById("cerrar1").addEventListener("click", () => dialogo.close());
+
+        //Imagen 2
+        const dialogo2 = document.getElementById("pinguinoReal");
+        document.getElementById("imagen2").addEventListener("click", () => dialogo2.showModal());
+        document.getElementById("cerrar2").addEventListener("click", () => dialogo2.close());
+
+         //Imagen 3
+        const dialogo3 = document.getElementById("pinguino");
+        document.getElementById("imagen3").addEventListener("click", () => dialogo3.showModal());
+        document.getElementById("cerrar3").addEventListener("click", () => dialogo3.close());
+    </script>
+</body>
+
+</html>

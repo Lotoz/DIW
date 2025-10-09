@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de ayuda</title>
-    <link type="css" href="./css/style1.css"/>
+    <link rel="stylesheet" href="./css/style1.css">
 </head>
 <body>
+      <nav class="navegador">Para saltar entre ejercicios.
+        <ol type="A">
+            <li><a href="GrippiZamira_02-03_etiquetas_HTML_comunes_listas.html">Ejercicios de listas</a> (1-5)</li>
+            <li><a href="GrippiZamira_02-03.html">Ejercicio de details </a>(Ejercicio 6)</li>
+            <li><a href="GrippiZamira_02-03Ejercicio7.html">Ejercicio de dialog</a> (Ejercicio7)</li>
+            <li><a href="GrippiZamira_02-03_Ejercicio8.html">Centro de ayuda</a> (Ejercicio8)</li>
+            <li><a href="GrippiZamira_02-03_Ejercicio9_Galeria.html">Galeria</a> (Ejercicio 9)</li>
+        </ol>
+    </nav>
     <h1>Bienvenido</h1>
     <p>Si tienes dudas abre el centro de ayuda.</p>
     <button id="centroAyuda">Abrir centro de ayuda</button>
     <dialog id="miDialogo">
         <h2>Centro de ayuda</h2>
+        <details>
+        <summary> Que es este sitio?</summary>
+        <p>Un centro de ayuda para ayudarte a ser ayudado mediante la ayuda que te da el centro de ayuda que te ayuda a ser ayudado</p>
+    </details>
+    <details>
+        <summary>Como cierro este cuadro?</summary>
+        <p>Dale al boton verde po'</p>
+    </details>
+    <details>
+        <summary>Que tecnologias se usan?</summary>
+        <p>HTML, CSS y Javascript.</p>
+    </details>
         <p>HTML5, css y javascript.</p>
         <button id="cerrar">Cerrar</button>
     </dialog>
+     <script>
+        const dialogo = document.getElementById("miDialogo");
+        document.getElementById("centroAyuda").addEventListener("click", () => dialogo.showModal());
+        document.getElementById("cerrar").addEventListener("click", () => dialogo.close());
+    </script>
 </body>
 </html>
