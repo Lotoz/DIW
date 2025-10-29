@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica: Formatos de imagen</title>
+</head>
+<body>
+    <h1>Práctica sobre formatos de imagen</h1>
+
+    <h2>Preguntas teóricas</h2>
+    <ol>
+        <li><b>Diferencia entre formatos rasterizados y vectoriales:</b>  
+            Los formatos <b>rasterizados</b> (como JPEG o PNG) están compuestos por píxeles, por lo que pierden calidad al ampliarse.  
+            Los <b>vectoriales</b> (como SVG) usan fórmulas matemáticas para definir formas y líneas, permitiendo escalar sin pérdida de calidad.
+        </li>
+        <li><b>Por qué se usa JPEG:</b>  
+            Es ideal para fotografías porque ofrece buena calidad con tamaño reducido mediante compresión con pérdida, aunque esta reduce la nitidez con sucesivas ediciones.
+        </li>
+        <li><b>Cuándo usar PNG:</b>  
+            Cuando se necesita <b>transparencia</b> o una imagen sin pérdida de calidad, por ejemplo en logotipos o iconos.
+        </li>
+        <li><b>Limitaciones del GIF:</b>  
+            Solo admite 256 colores, lo que reduce la calidad visual, pero permite <b>animaciones simples</b> y compatibilidad universal.
+        </li>
+        <li><b>Ventajas del SVG:</b>  
+            Es escalable sin pérdida de calidad, editable con código, y ocupa poco espacio, ideal para logotipos y gráficos web.
+        </li>
+        <li><b>Comparación WEBP con PNG y JPEG:</b>  
+            WEBP combina lo mejor de ambos: ofrece compresión más eficiente, soporta transparencia (como PNG) y animaciones (como GIF).
+        </li>
+        <li><b>Por qué no se usa BMP en la web:</b>  
+            Los BMP son archivos grandes sin compresión, lo que ralentiza las páginas. Aún pueden usarse para <b>edición sin pérdida</b> o en entornos locales.
+        </li>
+        <li><b>Ventajas del PSD:</b>  
+            Guarda capas, efectos y transparencias para edición profesional en Photoshop. No está pensado para publicación directa en web.
+        </li>
+        <li><b>Formato recomendado para web moderna con transparencia:</b>  
+            <b>WEBP</b>, porque ofrece buena calidad, transparencia y tamaño reducido.
+        </li>
+        <li><b>Compresión con pérdida vs sin pérdida:</b>  
+            - <b>Con pérdida:</b> Reduce tamaño eliminando datos (JPEG, WEBP con pérdida).  
+            - <b>Sin pérdida:</b> Mantiene toda la información (PNG, GIF, BMP).  
+            Se prefiere sin pérdida en gráficos o logotipos, y con pérdida en fotografías.
+        </li>
+    </ol>
+
+    <hr>
+    <h2>Ejercicio 1: Imágenes de diferentes formatos</h2>
+    <p>Imágenes de ejemplo:</p>
+    <ul>
+        <li>JPEG: <a href="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg">Gaviota</a></li>
+        <li>PNG: <a href="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png">Transparencia</a></li>
+        <li>SVG: <a href="https://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg">Logo SVG</a></li>
+    </ul>
+
+    <hr>
+    <h2>Ejercicio 2: Uso de height y width</h2>
+
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg" width="600" alt="Gaviota original" title="Gaviota original">
+        <figcaption>Imagen original (JPEG)</figcaption>
+    </figure>
+
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg" width="180" alt="Gaviota reducida proporcionalmente" title="Gaviota reducida proporcionalmente">
+        <figcaption>Reducida al 30% del ancho</figcaption>
+    </figure>
+
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg" height="150" alt="Gaviota reducida verticalmente" title="Gaviota reducida verticalmente">
+        <figcaption>Reducida verticalmente al 50%</figcaption>
+    </figure>
+
+    <hr>
+    <h2>Ejercicio 4: Atributo <code>loading</code></h2>
+    <p>Ejemplo con <code>loading="lazy"</code> (carga diferida):</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" width="200" loading="lazy" alt="PNG Lazy" title="Carga diferida">
+
+    <p>Ejemplo con <code>loading="eager"</code> (carga inmediata):</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg" width="200" loading="eager" alt="SVG Eager" title="Carga inmediata">
+
+    <hr>
+    <h2>Ejercicio 5: Imagen con ismap</h2>
+    <p>Haz clic en la imagen para ver las coordenadas:</p>
+    <a href="ismap.php"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg" width="400" ismap alt="Flor con ismap" title="Haz clic para ver coordenadas"></a>
+
+    <hr>
+    <h2>Ejercicio 6: Imagen con diferentes <code>srcset</code></h2>
+    <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg" 
+        srcset="
+            https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/200px-Gull_portrait_ca_usa.jpg 200w,
+            https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/400px-Gull_portrait_ca_usa.jpg 400w,
+            https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/800px-Gull_portrait_ca_usa.jpg 800w,
+            https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1200px-Gull_portrait_ca_usa.jpg 1200w"
+        sizes="(max-width: 600px) 200px, (max-width: 900px) 400px, 800px"
+        alt="Gaviota responsive"
+        title="Gaviota con srcset adaptable"
+        width="400">
+</body>
+</html>
