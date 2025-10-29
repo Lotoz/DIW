@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones . Combobox y textareas</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio1</h1>
+        <button onclick="alert('Gracias por pulsarme')">Pulsame</button>
+    </div>
+    <div>
+        <h1>Ejercicio 2</h1>
+        <button onclick="alert('pato')"><img src="./imagen.png" alt="a"></button>
+    </div>
+    <div>
+        <h1>Ejercicio 3</h1>
+        <h2>Selecione su Pueblo.</h2>
+        <h2>Blanco de malga</h2>
+        <select name="pueblos" id="pueblos">
+            <option value="Ataje">Atajete</option>
+            <option value="a">Jimena de Libar</option>
+            <option value="s">Gaucin</option>
+        </select>
+    </div>
+    <div>
+        <h1>Ejercicio 4</h1>
+        <h2>Selecione su Pueblo blanco de Malaga o Cadiz</h2>
+        <select name="pueblos" id="pueblos">
+            <optgroup label="Malaga">
+                <option value="Ataje">Atajete</option>
+                <option value="a">Jimena de Libar</option>
+                <option value="s">Gaucin</option>
+            </optgroup>
+            <optgroup label="Cadiz">
+                <option value="a">AA</option>
+                <option value="b">BB</option>
+            </optgroup>
+        </select>
+    </div>
+    <div>
+        <h1>Ejercicio 5</h1>
+        <form action="" method="get">
+            <label for="textoGrande">Textarea</label>
+            <textarea name="textoGrande" id="textoGrande" cols="10" rows="5" maxlength="50"
+                placeholder="Escribe tus impresioens" autofocus required></textarea>
+        </form>
+    </div>
+    <div>
+        <h1>Ejercicio 6</h1>
+        <h2>1.Botonoes</h2>
+        <form action="" method="get">
+
+            <fieldset>
+                <legend>Formulario Ejemplo</legend>
+                <div>
+                    <label for="nombree">Nombre</label>
+                    <input type="text" name="nombree" id="nombree">
+                    <br>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpiar</button>
+                    <button type="" disabled>Boton deshabilitado</button>
+                    <button type="" autofocus>Atencion</button>
+                </div>
+            </fieldset>
+
+        </form>
+        <br>
+        <h2>2.Barra de progreso </h2>
+        <h3>Subida de archivo</h3>
+        <progress max="100" value="70"></progress>
+        <hr>
+        <h3>Progreso indeterminado</h3>
+        <progress></progress>
+        <h2>3.Indicador</h2>
+        <h3>Nivel de bateria</h3>
+        <meter max="100" value="60" high="90"></meter>
+        <hr>
+        <h3>Ocupacion de sala</h3>
+        <meter max="100" value="80" high="90"></meter>
+        <!--NO se pone amarillo y falta, el data list, el select y ya -->
+    </div>
+
+</body>
+
+</html>
