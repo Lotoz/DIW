@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mapas Google</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="2" class="cabecera">
+          <h1>Encabezado Principal</h1>
+        </td>
+      </tr>
+      <tr>
+        <td class="centro">
+          <h2>Contenido del Centro</h2>
+          <h3>Mapa de sevilla</h3>
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1FnEZ_m4iXsByaL79vaiS4amIJ1US8b0&ehbc=2E312F"
+            width="640"
+            height="480"
+          ></iframe>
+          <h3>Paronamica</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1762357584396!6m8!1m7!1syJlBsFJVAYvWts6-lY_MMg!2m2!1d36.63433527511199!2d-4.496631888119595!3f254.5665302550592!4f-4.468213937069336!5f0.7820865974627469"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <h3>Paronamica 1</h3>
+          <h5>Mendoza Capital, Parque General San Martin</h5>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1762357660798!6m8!1m7!1sUmtDmLiaZ-uwUQC8Jq4WtQ!2m2!1d-32.8924487052215!2d-68.86646331345395!3f216.84734936160817!4f-4.999985795648996!5f0.7820865974627469"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <h5>Arroyo de la miel, Benalmadena</h5>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1762357739566!6m8!1m7!1saqvISClq_1fVhM6O6bVPWQ!2m2!1d36.60283802584484!2d-4.53284408668713!3f254.1890280886796!4f-9.855593393905309!5f0.7820865974627469"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <h5>Mapa con coordenadas</h5>
+          <label for="x"></label>
+          <input type="text" value="37'18.9"" id="x" />
+          <label for="y"></label>
+          <input type="text" value="29'59.8" id="y" />
+          <label for="z"></label>
+          <input type="text" value="36" id="z" />
+          <button onclick="cargarMapa()">Boton</button>
+            <p>Lo que se hace, es colocar las coordenadas aproximadamente en la altura del hesmiferio, esto se puede obtener en google maps si no se coloca ninguna dirrecion especifica</p>
+          <script>
+            function cargarMapa() {
+              //Creacion de mapas con javascript
+              let x = parseFloat(document.getElementById("x").value);
+              let y = parseFloat(document.getElementById("y").value);
+              let z = parseFloat(document.getElementById("z").value);
+              //Abrimos una nueva ventana
+              let localizacion =
+                "https://www.google.es/maps/@" + x + "," + y + "," + z + "z";
+              window.open(localizacion, "_blank");
+            }
+          </script>
+
+          <h5>Mapa de Londres</h5>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1lo5alqYP8vTY4va2mLQAfzFaT2e7bD0&ehbc=2E312F" width="640" height="480"></iframe>
+          <h5>Mapa de Roma</h5>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1QcPeSET-r3urr9WNNBtrfvF60BUfU3c&ehbc=2E312F" width="640" height="480"></iframe>
+          <h5>Mapa de Ucrania</h5>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1n9nqXtMLbR3gcyomUSWewhlpDPNmLA8&ehbc=2E312F" width="640" height="480"></iframe>
+        </td>
+        <td class="barra">
+          <h2>Menú</h2>
+          <ul>
+            <li><a href="#">Enlace 1</a></li>
+            <li><a href="#">Enlace 2</a></li>
+            <li><a href="#">Enlace 3</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="pie">
+          <p>&copy; 2025 Zamira Grippi. Todos los derechos reservados.</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
