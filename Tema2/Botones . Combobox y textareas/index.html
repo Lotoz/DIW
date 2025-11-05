@@ -50,39 +50,97 @@
         </form>
     </div>
     <div>
-        <h1>Ejercicio 6</h1>
-        <h2>1.Botonoes</h2>
-        <form action="" method="get">
+    <h1>Ejercicio 6</h1>
 
-            <fieldset>
-                <legend>Formulario Ejemplo</legend>
-                <div>
-                    <label for="nombree">Nombre</label>
-                    <input type="text" name="nombree" id="nombree">
-                    <br>
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Limpiar</button>
-                    <button type="" disabled>Boton deshabilitado</button>
-                    <button type="" autofocus>Atencion</button>
-                </div>
-            </fieldset>
+    <form action="" method="post" style="width: 80%; margin-left: auto; margin-right: auto; border: red 1px solid; padding: 10px;">
+        <fieldset>
+            <legend>Formulario de ejemplo</legend>
 
-        </form>
-        <br>
-        <h2>2.Barra de progreso </h2>
-        <h3>Subida de archivo</h3>
-        <progress max="100" value="70"></progress>
-        <hr>
-        <h3>Progreso indeterminado</h3>
-        <progress></progress>
-        <h2>3.Indicador</h2>
-        <h3>Nivel de bateria</h3>
-        <meter max="100" value="60" high="90"></meter>
-        <hr>
-        <h3>Ocupacion de sala</h3>
-        <meter max="100" value="80" high="90"></meter>
-        <!--NO se pone amarillo y falta, el data list, el select y ya -->
-    </div>
+            <!-- Campo de texto con datalist -->
+            <div>
+                <label for="nombree">Nombre:</label>
+                <input type="text" name="nombree" id="nombree" list="sugerencias" placeholder="Escribe tu nombre..." required>
+                <datalist id="sugerencias">
+                    <option value="Ana">
+                    <option value="Luis">
+                    <option value="Carmen">
+                    <option value="Pedro">
+                </datalist>
+            </div>
+            <br>
+
+            <!-- Textarea -->
+            <div>
+                <label for="comentarios">Comentarios:</label><br>
+                <textarea name="comentarios" id="comentarios" cols="30" rows="4" maxlength="100" placeholder="Escribe tus impresiones..." wrap="soft"></textarea>
+            </div>
+            <br>
+
+            <!-- Select simple y múltiple -->
+            <div>
+                <label for="pueblo">Selecciona tu pueblo:</label>
+                <select name="pueblo" id="pueblo">
+                    <optgroup label="Málaga">
+                        <option value="atajete" selected>Atajete</option>
+                        <option value="jimena">Jimena de Líbar</option>
+                        <option value="gaucin">Gaucín</option>
+                    </optgroup>
+                    <optgroup label="Cádiz">
+                        <option value="ubrique">Ubrique</option>
+                        <option value="grazalema">Grazalema</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="pueblos_multi">Selecciona varios pueblos:</label>
+                <select name="pueblos_multi" id="pueblos_multi" multiple size="3">
+                    <option value="atajete">Atajete</option>
+                    <option value="jimena">Jimena de Líbar</option>
+                    <option value="gaucin">Gaucín</option>
+                    <option value="ubrique">Ubrique</option>
+                    <option value="grazalema">Grazalema</option>
+                </select>
+            </div>
+            <br>
+
+            <!-- Barra de progreso -->
+            <div>
+                <label for="progreso">Progreso de subida:</label><br>
+                <progress id="progreso" max="100" value="70">70%</progress>
+            </div>
+            <br>
+
+            <!-- Indicadores con meter -->
+            <div>
+                <label for="bateria">Nivel de batería:</label><br>
+                <meter id="bateria" min="0" max="100" low="20" high="90" value="60">60%</meter>
+            </div>
+            <br>
+            <div>
+                <label for="ocupacion">Ocupación de sala:</label><br>
+                <meter id="ocupacion" min="0" max="100" low="50" high="90" value="80">80%</meter>
+            </div>
+            <br>
+
+            <!-- Output -->
+            <div>
+                <label for="resultado">Resultado predefinido:</label>
+                <output name="resultado" id="resultado">Formulario listo</output>
+            </div>
+            <br>
+
+            <!-- Botones -->
+            <div>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
+                <button type="button" disabled>Deshabilitado</button>
+                <button type="button" autofocus>Atención</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
 
 </body>
 
