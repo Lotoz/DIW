@@ -1,5 +1,7 @@
 # DIW
-Diseño de interfaces web.
+## Diseño de interfaces web.
 
-## Unidades
->> Primeras Actividades
+### Unidades
+- Primeras Actividades
+
+
