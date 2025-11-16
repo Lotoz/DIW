@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tablas anidadas e irregulares</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 6px 10px;
+        text-align: center;
+      }
+      .blue-table {
+        background-color: #bfe6ee;
+      }
+      .small {
+        width: 60px;
+        height: 40px;
+      }
+
+      .demo-ej2 {
+        width: 90%;
+        max-width: 980px;
+        margin: 18px auto;
+        box-shadow: 0 0 0 2px #e0e0e0 inset;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .ej2-header {
+        background: #66f0ea;
+        padding: 18px 22px;
+        display: flex;
+        align-items: center;
+      }
+      .ej2-logo {
+        width: 56px;
+        height: 56px;
+        background: #ffffff88;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        font-weight: bold;
+        font-size: 12px;
+        margin-right: 16px;
+      }
+      .ej2-body {
+        display: flex;
+        background: #fff;
+      }
+      .ej2-nav {
+        width: 140px;
+        background: #f6fafa;
+        padding: 14px;
+        border-right: 1px solid #e0e0e0;
+      }
+      .ej2-nav a {
+        display: block;
+        color: #2b6aa3;
+        margin: 6px 0;
+        font-size: 13px;
+        text-decoration: none;
+      }
+      .ej2-main {
+        flex: 1;
+        padding: 22px;
+      }
+      .ej2-main h2 {
+        margin-top: 0;
+      }
+      .ej2-footer {
+        background: #e9774e;
+        color: #fff;
+        padding: 14px 20px;
+        font-weight: bold;
+      }
+
+      .ej3-table {
+        width: 720px;
+        max-width: 95%;
+        margin: 18px auto;
+        border: 3px solid #d6d6d6;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      .ej3-table caption {
+        caption-side: top;
+        font-weight: bold;
+        padding: 8px;
+        font-size: 18px;
+        background: #f4f4f4;
+      }
+      .country-list td {
+        background: #e9e9e9;
+        padding: 8px 12px;
+        border: 1px solid #bababa;
+      }
+      .ej3-table td {
+        vertical-align: top;
+        padding: 18px;
+      }
+      .ej3-list {
+        margin: 0;
+        padding-left: 20px;
+        line-height: 1.6;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Ejercicio 0 - Ejemplos</h2>
+    <p>Copia y pega los ejemplos que hay en los apuntes y añádele una fila.</p>
+    <!--  Ejemplo 1-->
+    <table border="”1”" rules="”groups”">
+      <caption>
+        Ventas por secciones
+      </caption>
+      <thead>
+        <tr>
+          <td>&nbsp;</td>
+          <td>Hardware</td>
+          <td>Software</td>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Total</th>
+          <th>25000</th>
+          <th>22000</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th>Enero</th>
+          <td>12000</td>
+          <td>15000</td>
+        </tr>
+        <tr>
+          <th>Febrero</th>
+          <td>13000</td>
+          <td>9000</td>
+        </tr>
+        <tr>
+          <td colspan="3">Fila mas</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--  Ejemplo 2-->
+    <table>
+      <colgroup>
+        <col style="”background-color: " gray” />
+        <col span="”2”" style="”background-color:yellow;”" />
+      </colgroup>
+      <thead>
+        <tr style="”background-color: " black; color:white”>
+          <th>País</th>
+          <th>Capital</th>
+          <th>Otras ciudades</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>España</th>
+          <td>Madrid</td>
+          <td>Barcelona, Zaragoza, Sevilla, Valencia, Bilbao</td>
+        </tr>
+        <tr>
+          <th>Francia</th>
+          <td>París</td>
+          <td>Lyon, Marsella, Nantes, Toulouse</td>
+        </tr>
+        <tr>
+          <th>Portugal</th>
+
+          <td>Lisboa</td>
+          <td>Oporto, Coimbra</td>
+        </tr>
+        <tr>
+          <th>extra</th>
+          <td>extra</td>
+          <td>extra</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--  Ejemplo 3-->
+    <table>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="”2”">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="”2”">&nbsp;</td>
+        <td rowspan="”2”">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="”3”">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="”3”">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="”3”">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="”3”">Ex</td>
+      </tr>
+    </table>
+    <!--Ejemplo 4-->
+    <table>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>
+          <table>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <table>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <table>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3">ex</td>
+      </tr>
+    </table>
+    
+    <hr />
+
+    <h2>Ejercicio 1 - Fusión de celdas: rowspan y colspan</h2>
+
+    <h3>a)</h3>
+    <table border="1">
+      <tr>
+        <td colspan="2">Esta celda tiene un colspan="2"</td>
+      </tr>
+      <tr>
+        <td>Celda normal</td>
+        <td>Otra celda</td>
+      </tr>
+    </table>
+
+    <h3>b)</h3>
+    <table border="1">
+      <tr>
+        <td rowspan="2">
+          Esta celda tiene rowspan="2", por eso tiene fusionada la celda de
+          abajo.
+        </td>
+        <td>Celda Normal</td>
+      </tr>
+      <tr>
+        <td>Otra celda normal</td>
+      </tr>
+    </table>
+
+    <h3>c) (tabla azul con colspan y rowspan)</h3>
+    <p>La tabla está coloreada en azul claro y combina colspan y rowspan.</p>
+
+    <table border="1" class="blue-table">
+      <!-- No me sale, preguntar luego -->
+      <tr>
+        <td colspan="3">Línea1 Línea2</td>
+      </tr>
+      <tr>
+        <td>Línea3</td>
+        <td rowspan="2">Línea4</td>
+        <td>Línea5</td>
+      </tr>
+      <tr>
+        <td>Línea7</td>
+        <td>Línea6 Línea8</td>
+      </tr>
+    </table>
+
+    <h3>d) (cada celda con color diferente)</h3>
+    <p>Usa style="background-color:" para colorear cada celda.</p>
+
+    <table border="1">
+      <tr>
+        <td style="background-color: #adff2f">Línea1</td>
+        <td style="background-color: #ffff00">Línea2</td>
+      </tr>
+      <tr>
+        <td style="background-color: #00ff00">Línea3</td>
+        <td style="background-color: #ffd700">Línea4</td>
+      </tr>
+      <tr>
+        <td style="background-color: #9370db; color: #fff">Línea5</td>
+        <td style="background-color: #f4a460">Línea6</td>
+      </tr>
+      <tr>
+        <td style="background-color: #7fffd4">Línea7</td>
+        <td style="background-color: #ffcc00">Línea8</td>
+      </tr>
+    </table>
+
+    <h3>e) Crea estas tablas con colspan y rowspan</h3>
+
+    <p>
+      Tabla 1: ejemplo con rowspan en la columna central y celdas altas a los
+      lados.
+    </p>
+    <table border="1">
+      <tr>
+        <td class="small">A</td>
+        <td class="small">B</td>
+        <td class="small" rowspan="2">C</td>
+        <td class="small">D</td>
+      </tr>
+      <tr>
+        <td rowspan="2">E</td>
+        <td class="small">F</td>
+        <!-- C sigue aquí por rowspan="2" -->
+        <td class="small">H</td>
+      </tr>
+      <tr>
+        <td class="small">J</td>
+        <td class="small">L</td>
+      </tr>
+    </table>
+
+    <p>
+      Tabla 2: ejemplo con celdas que usan colspan para crear una fila ancha
+      central y una fila inferior con 4 celdas pequeñas.
+    </p>
+    <table border="1">
+      <tr>
+        <td class="small">A</td>
+        <td colspan="2" class="small">C</td>
+        <td class="small">D</td>
+      </tr>
+      <tr>
+        <td class="small">E</td>
+        <td colspan="2" class="small">&nbsp;</td>
+        <td class="small">H</td>
+      </tr>
+      <tr>
+        <td class="small">I</td>
+        <td class="small">J</td>
+        <td class="small">K</td>
+        <td class="small">L</td>
+      </tr>
+    </table>
+    <h2>Ejercicio 2</h2>
+    <div
+      class="demo-ej2"
+      role="region"
+      aria-label="Ejercicio 2 - diseño de tabla">
+      <div class="ej2-header">
+        <div class="ej2-logo">imagen<br />classroom</div>
+        <div>
+          <strong>Cabecera</strong>
+        </div>
+      </div>
+
+      <div class="ej2-body">
+        <nav class="ej2-nav" aria-label="navegación lateral">
+          <a href="#">Enlace1</a>
+          <a href="#">Enlace2</a>
+          <a href="#">Enlace3</a>
+          <a href="#">Enlace4</a>
+          <a href="#">Enlace5</a>
+          <a href="#">Enlace6</a>
+        </nav>
+
+        <main class="ej2-main">
+          <h2>Contenido</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            sollicitudin sem at lectus rutrum varius. Donec egestas a enim
+            auctor vehicula. Vivamus feugiat odio a nisl maximus laoreet. Cras
+            egestas turpis quis rhoncus pretium.
+          </p>
+
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Integer pulvinar consequat mauris, eu
+            laoreet sem.
+          </p>
+        </main>
+      </div>
+
+      <div class="ej2-footer">Pies</div>
+    </div>
+    <h2>Ejercicio 3 - Atributos de las Tablas Anidadas</h2>
+    <table
+      class="ej3-table"
+      role="table"
+      aria-label="Climas de América del Sur">
+      <caption>
+        Climas de América del Sur
+      </caption>
+      <tr>
+        <td
+          colspan="2"
+          style="
+            background: #f2f2f2;
+            font-weight: 700;
+            color: #666;
+            text-align: center;
+          ">
+          Climas de América del Sur
+        </td>
+      </tr>
+
+      <tr>
+        <td style="width: 50%">
+          <strong>Parte de arriba de América del Sur. Países como:</strong>
+          <table class="country-list" style="margin: 12px 0">
+            <tr>
+              <td>Venezuela</td>
+            </tr>
+            <tr>
+              <td>Colombia</td>
+            </tr>
+            <tr>
+              <td>Ecuador</td>
+            </tr>
+            <tr>
+              <td>Perú</td>
+            </tr>
+          </table>
+        </td>
+
+        <td style="width: 50%">
+          <strong>Parte de abajo de América del Sur. Países como:</strong>
+          <table class="country-list" style="margin: 12px 0">
+            <tr>
+              <td>Argentina</td>
+            </tr>
+            <tr>
+              <td>Chile</td>
+            </tr>
+            <tr>
+              <td>Uruguay</td>
+            </tr>
+            <tr>
+              <td>Paraguay</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="height: 160px">
+          <ul class="ej3-list">
+            <li><strong>Bosque tropical,</strong> clima de sabana,</li>
+            <li>clima marítimo con inviernos secos.</li>
+          </ul>
+        </td>
+
+        <td>
+          <ul class="ej3-list">
+            <li>Climas marítimos con veranos secos,</li>
+            <li>climas fríos,</li>
+            <li>clima de estepa,</li>
+            <li>clima desértico.</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      ">
+      <h3>Formulario</h3>
+      <fieldset>
+        <legend>Datos personales:</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" /><br /><br />
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" /><br /><br />
+
+        <label for="satisfaccion"
+          >Seleccione su satisfacion con el concierto</label
+        >
+        <input
+          type="range"
+          id="satisfaccion"
+          name="satisfaccion"
+          min="0"
+          max="10" /><br /><br />
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
+    <hr />
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      ">
+      <h3>Formulario 3</h3>
+      <fieldset>
+        <legend>Datos personales:</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" /><br /><br />
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" /><br /><br />
+      </fieldset>
+      <fieldset>
+        <legend>Concierto:</legend>
+        <label for="genero">Concierto al que asiste:</label>
+        <select id="genero" name="genero">
+          <option value="rock">Rock</option>
+          <option value="pop">Pop</option>
+          <option value="clasica">Clásica</option>
+          <option value="jazz">Jazz</option></select
+        ><br /><br />
+        <label for="satisfaccion">Que te parecio el concierto?</label>
+        <textarea name="satisfaccion" id="satisfaccion">
+ Escribe sus impresiones</textarea
+        >
+        <br /><br />
+        <label for="valoracion">Valoracion</label>
+        <input type="text" name="valoracion" id="valoracion" />
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      "></form>
+  </body>
+</html>
