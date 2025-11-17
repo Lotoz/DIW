@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      ">
+      <h3>Formulario</h3>
+      <fieldset>
+        <legend>Datos personales:</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" /><br /><br />
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" /><br /><br />
+
+        <label for="satisfaccion"
+          >Seleccione su satisfacion con el concierto</label
+        >
+        <input
+          type="range"
+          id="satisfaccion"
+          name="satisfaccion"
+          min="0"
+          max="10" /><br /><br />
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
+    <hr />
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      ">
+      <h3>Formulario 3</h3>
+      <fieldset>
+        <legend>Datos personales:</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" /><br /><br />
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" /><br /><br />
+      </fieldset>
+      <fieldset>
+        <legend>Concierto:</legend>
+        <label for="genero">Concierto al que asiste:</label>
+        <select id="genero" name="genero">
+          <option value="rock">Rock</option>
+          <option value="pop">Pop</option>
+          <option value="clasica">Clásica</option>
+          <option value="jazz">Jazz</option></select
+        ><br /><br />
+        <label for="satisfaccion">Que te parecio el concierto?</label>
+        <textarea name="satisfaccion" id="satisfaccion">
+ Escribe sus impresiones</textarea
+        >
+        <br /><br />
+        <label for="valoracion">Valoracion</label>
+        <input type="text" name="valoracion" id="valoracion" />
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
+    <hr />
+
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      ">
+      <fieldset>
+        <legend>Datos personales:</legend>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo">
+          <option value="guerrero">Guerrero</option>
+          <option value="mago">Mago</option>
+          <option value="explorador">Explorador</option>
+        </select>
+
+        <label for="edad">Escoge edad</label>
+        <input
+          type="range"
+          id="edad"
+          name="edad"
+          min="0"
+          max="100" /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Caracteristicas:</legend>
+
+        <label for="Velocidad">Velocidad:</label>
+        <progress id="Velocidad" max="200" value="35">35%</progress>
+
+        <label for="Fuerza">Fuerza:</label>
+        <progress id="Fuerza" max="200" value="35">35%</progress>
+
+        <label for="Persuasion">Persuasion:</label>
+        <progress id="Persuasion" max="200" value="35">35%</progress>
+
+        <label for="Espionaje">Espionaje:</label>
+        <progress id="Espionaje" max="200" value="35">35%</progress>
+
+        <br /><br />
+        <button type="button" onclick="cambio()">Genera tu personaje</button>
+      </fieldset>
+
+      <script>
+        function cambio() {
+          document.getElementById("Velocidad").value = Math.floor(
+            Math.random() * 201
+          );
+          document.getElementById("Fuerza").value = Math.floor(
+            Math.random() * 201
+          );
+          document.getElementById("Persuasion").value = Math.floor(
+            Math.random() * 201
+          );
+          document.getElementById("Espionaje").value = Math.floor(
+            Math.random() * 201
+          );
+        }
+      </script>
+    </form>
+    <hr />
+    <form
+      action=""
+      method="post"
+      style="
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: beige;
+        border-color: brown;
+        border: 1px solid red;
+        border-radius: 6px;
+      ">
+      <fieldset>
+        <legend>Datos personales:</legend>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo">
+          <option value="guerrero">Guerrero</option>
+          <option value="mago">Mago</option>
+          <option value="explorador">Explorador</option>
+        </select>
+
+        <label for="edad">Escoge edad</label>
+        <input
+          type="range"
+          id="edad"
+          name="edad"
+          min="0"
+          max="100" /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Caracteristicas:</legend>
+
+        <label for="Velocidad2">Velocidad:</label>
+        <meter id="Velocidad2" min="0" max="200" value="35">35/200</meter>
+
+        <label for="Fuerza2">Fuerza:</label>
+        <meter id="Fuerza2" min="0" max="200" value="35">35/200</meter>
+
+        <label for="Persuasion2">Persuasion:</label>
+        <meter id="Persuasion2" min="0" max="200" value="35">35/200</meter>
+
+        <label for="Espionaje2">Espionaje:</label>
+        <meter id="Espionaje2" min="0" max="200" value="35">35/200</meter>
+
+        <br /><br />
+        <button type="button" onclick="cambioMeter()">
+          Genera tu personaje
+        </button>
+      </fieldset>
+
+      <script>
+        function cambioMeter() {
+          document.getElementById("Velocidad2").value = Math.floor(
+            Math.random() * 201
+          );
+          document.getElementById("Fuerza2").value = Math.floor(
+            Math.random() * 201
+          );
+          document.getElementById("Persuasion2").value = Math.floor(
+            Math.random() * 201
+          );
+          document.getElementById("Espionaje2").value = Math.floor(
+            Math.random() * 201
+          );
+        }
+      </script>
+    </form>
+  </body>
+</html>
