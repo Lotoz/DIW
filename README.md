@@ -16,4 +16,4 @@
 
 - Tema_3
 
-> Ejercicios con svg e imagenes.
+> Ejercicios con svg e imagenes
