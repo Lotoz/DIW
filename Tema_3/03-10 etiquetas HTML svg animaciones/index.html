@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>etiquetas HTML svg animaciones</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="ejemplos">
+    <h2>Ejemplos del apunte</h2>
+    <h3>Ejemplo 1</h3>
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" stroke="lightgrey" d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+      <circle r="5" fill="red">
+        <animateMotion dur="10s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+      </circle>
+    </svg>
+    <svg viewBox="-3 -100 216 150" xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" stroke="lightgrey" d="M 0 0 C 53 -89 98 -101 210 -44z" />
+      <circle r="5" fill="red">
+        <animateMotion dur="2s" repeatCount="indefinite" path="M 0 0 C 53 -89 98 -101 210 -44z" />
+      </circle>
+    </svg>
+    <h3>Ejemplo 2</h3>
+    <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60,30 90,90 30,90">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 70" to="360 60 70"
+          dur="10s" repeatCount="indefinite" />
+      </polygon>
+    </svg>
+    <h3>Creados por el profe</h3>
+    <svg width=300 viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" &gt; <rect width="10" height="10">
+      <animate attributeName="rx" values="0;5;0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="width" values="10;6;8;6;10" dur="3s" repeatCount="indefinite" />
+      </rect>
+
+      <rect width="7" height="7" x="1.5" y="1.5" fill="red">
+        <animate attributeName="rx" values="0;5;0" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="width" values="7;3.5;7" dur="10s" repeatCount="indefinite" />
+      </rect>
+
+    </svg>
+
+
+    <br>
+
+    <svg width="220" viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" &gt; <rect x="0" y="0" width="100"
+      height="100">
+      <animate attributeType="XML" attributeName="y" values="0;100;50;200;0" from="0" to="200" dur="1s"
+        repeatCount="indefinite" />
+      </rect>
+
+
+
+    </svg>
+    <br>
+    <svg width="300" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" &gt; <circle r="5" fill="red">
+      <animateMotion dur="10s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+
+      </circle>
+      <path fill="none" stroke="black" stroke-width="1" d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+    </svg>
+
+    <br>
+    <svg width="300" height="150" viewBox="0 0 30 15" xmlns="http://www.w3.org/2000/svg" &gt; <circle r=".5" fill="red">
+      <animateMotion dur="10s" repeatCount="indefinite"
+        path="M 8 3 C 6 1 2 -1 3 4 C 4 7 6 7 8 10 C 10 7 12 7 13 4 C 14 -1 10 1 8 3 z" />
+
+      </circle>
+      <path d="M 8 3 C 6 1 2 -1 3 4 C 4 7 6 7 8 10 C 10 7 12 7 13 4 C 14 -1 10 1 8 3" stroke="#FF0000"
+        stroke-width="0.1" fill="none" />
+    </svg>
+
+
+
+    <br>
+    <svg width=400 viewBox="0 -100 200 150" xmlns="http://www.w3.org/2000/svg" &gt; <path fill="none" stroke="lightgrey"
+      d="M 0 0 C 53 -89 98 -101 210 -44z" />
+    <circle r="5" fill="red">
+
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 0 0 C 53 -89 98 -101 210 -44z" />
+
+    </circle>
+
+    </svg>
+    <br>
+
+    <svg width="400" height="400" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" &gt; <polygon
+      points="60,30 90,90 30,90">
+
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 70" to="360 60 70"
+        dur="2s" repeatCount="indefinite" begin="click" />
+
+      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1 1" to="2 2" dur="2s"
+        repeatCount="indefinite" begin="click+2" />
+
+      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="2 2" to="1 1" dur="2s"
+        repeatCount="indefinite" begin="click+4" />
+
+
+      </polygon>
+    </svg>
+  </div>
+  <div class="ejercicios">
+    <h2>Ejercicio 2</h2>
+    <svg viewBox="-100 -100 310 310" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+      <circle cx="120" cy="20" r="20" fill="red" stroke-width="15">
+        <animate attributeName="cy" begin="0s" dur="1s" from="50" to="40%" repeatCount="indefinite" />
+      </circle>
+      <rect x="40" y="-30" width="50" height="50" fill="blue">
+        <animate attributeName="x" begin="0s" dur="1s" from="50" to="-40%" repeatCount="indefinite" />
+      </rect>
+      <polygon points="145,-10  100,-10  120,-50" fill="orange" stroke-width="15">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 70" to="360 60 70"
+          dur="1s" repeatCount="indefinite" />
+      </polygon>
+    </svg>
+    <h2>Ejercicio 3</h2>
+    <svg viewBox="-60 -60 290 90" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+      <circle cx="120" cy="20" r="20" fill="red" stroke-width="15">
+        <set attributeName="fill" to="green" begin="1s" />
+      </circle>
+      <rect x="40" y="-30" width="50" height="50" fill="blue">
+        <set attributeName="fill" to="red" begin="1s" />
+      </rect>
+      <polygon onmouseenter="changeStyle()" id="tri" points="145,-10  100,-10  120,-50" fill="orange" stroke-width="15">
+        <script>
+          function changeStyle() {
+            let color = document.getElementById("tri");
+            //color.setAttribute("fill", "purple");
+            //Debe ser asi o no funciona
+            if (color.style.fill == "orange") {
+              color.style.fill = "purple";
+            } else {
+              color.style.fill = "orange";
+            }
+          }
+        </script>
+      </polygon>
+    </svg>
+    <h2>Ejercicio 4</h2>
+    <svg viewBox="0 -5 10 20" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+      <path fill="none" stroke="black"
+        d="M 4 8 L 10 1 L 13 0 L 12 3 L 5 9 C 6 10 6 11 7 10 C 7 11 8 12 7 12 A 1.42 1.42 0 0 1 6 13 A 5 5 0 0 0 4 10 Q 3.5 9.9 3.5 10.5 T 2 11.8 T 1.2 11 T 2.5 9.5 T 3 9 A 5 5 90 0 0 0 7 A 1.42 1.42 0 0 1 1 6 C 1 5 2 6 3 6 C 2 7 3 7 4 8 M 10 1 L 10 3 L 12 3 L 10.2 2.8 L 10 1" />
+      <circle r="1.5" fill="red">
+        <animateMotion dur="10s" repeatCount="indefinite"
+          path="M 4 8 L 10 1 L 13 0 L 12 3 L 5 9 C 6 10 6 11 7 10 C 7 11 8 12 7 12 A 1.42 1.42 0 0 1 6 13 A 5 5 0 0 0 4 10 Q 3.5 9.9 3.5 10.5 T 2 11.8 T 1.2 11 T 2.5 9.5 T 3 9 A 5 5 90 0 0 0 7 A 1.42 1.42 0 0 1 1 6 C 1 5 2 6 3 6 C 2 7 3 7 4 8 M 10 1 L 10 3 L 12 3 L 10.2 2.8 L 10 1" />
+      </circle>
+      <circle r="2" fill="blue">
+        <animateMotion dur="5s" repeatCount="indefinite"
+          path="M 4 8 L 10 1 L 13 0 L 12 3 L 5 9 C 6 10 6 11 7 10 C 7 11 8 12 7 12 A 1.42 1.42 0 0 1 6 13 A 5 5 0 0 0 4 10 Q 3.5 9.9 3.5 10.5 T 2 11.8 T 1.2 11 T 2.5 9.5 T 3 9 A 5 5 90 0 0 0 7 A 1.42 1.42 0 0 1 1 6 C 1 5 2 6 3 6 C 2 7 3 7 4 8 M 10 1 L 10 3 L 12 3 L 10.2 2.8 L 10 1" />
+      </circle>
+      <circle r="1" fill="green">
+        <animateMotion dur="2s" repeatCount="indefinite"
+          path="M 4 8 L 10 1 L 13 0 L 12 3 L 5 9 C 6 10 6 11 7 10 C 7 11 8 12 7 12 A 1.42 1.42 0 0 1 6 13 A 5 5 0 0 0 4 10 Q 3.5 9.9 3.5 10.5 T 2 11.8 T 1.2 11 T 2.5 9.5 T 3 9 A 5 5 90 0 0 0 7 A 1.42 1.42 0 0 1 1 6 C 1 5 2 6 3 6 C 2 7 3 7 4 8 M 10 1 L 10 3 L 12 3 L 10.2 2.8 L 10 1" />
+      </circle>
+    </svg>
+    <h1>Buscar guia de como hacer estos ejercicios</h1>
+    <h2>Ejercicio 5</h2>
+    <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+      <style>
+        .small {
+          font: italic 13px sans-serif;
+        }
+
+        .heavy {
+          font: bold 30px sans-serif;
+        }
+
+        .Rrrrr {
+          font: italic 40px serif;
+          fill: red;
+        }
+      </style>
+      <text x="20" y="35" class="small">El
+        <!--No funciona-->
+        <animateTransform attributeName="x" attributeType="XML" type="translate" from="20" to="40" dur="2"
+          repeatCount="indefinite" />
+      </text>
+      <text x="40" y="35" class="heavy">IES Playamar</text>
+      <text x="55" y="55" class="small">es</text>
+      <text x="65" y="55" class="Rrrrr">Genial!</text>
+    </svg>
+    <h2>Ejercicio 6</h2>
+    <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+      <style>
+        .small {
+          font: italic 13px sans-serif;
+        }
+
+        .heavy {
+          font: bold 30px sans-serif;
+        }
+
+        .Rrrrr {
+          font: italic 40px serif;
+          fill: red;
+        }
+      </style>
+      <text x="20" y="35" class="small">El
+        <!--No funciona-->
+        <animateTransform attributeName="x" attributeType="XML" type="translate" from="20" to="40" dur="2"
+          repeatCount="indefinite" />
+      </text>
+      <text x="40" y="35" class="heavy">IES Playamar
+        <animateTransform attributeName="heavy" attributeType="XML" type="rotate" from="20" to="40" dur=" 2"
+          repeatCount="indefinite" />
+      </text>
+      <text x="55" y="55" class="small">es</text>
+      <text x="65" y="55" class="Rrrrr">Genial!</text>
+    </svg>
+
+  </div>
+</body>
+
+</html>

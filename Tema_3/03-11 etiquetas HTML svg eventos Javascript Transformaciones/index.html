@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>etiquetas HTML svg eventos Javascript Transformaciones</title>
+</head>
+
+<body>
+    <div class="ejemplos">
+        <h2>Ejemplos</h2>
+        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            <path fill="none" stroke="lightgrey" d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+            <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">
+                <circle r="5" fill="red">
+                    <animateMotion dur="10s" repeatCount="indefinite"
+                        path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+                </circle>
+            </a>
+        </svg>
+        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <rect x="10" y="35" height="15" width="0">
+                <animate attributeType="XML" attributeName="width" id="rectangulo1" to="100" dur="8s" fill="freeze"
+                    begin="2s" />
+            </rect>
+            <rect x="35" y="60" height="15" width="0">
+                <animate attributeType="XML" attributeName="width" id="rectangulo2" to="75" dur="6s" fill="freeze"
+                    begin="rectangulo1.end" />
+            </rect>
+            <rect x="60" y="85" height="15" width="0">
+                <animate attributeType="XML" attributeName="width" id="rectangulo3" to="50" dur="4s" fill="freeze"
+                    begin="rectangulo2.end" />
+            </rect>
+        </svg>
+        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect x="10" y="35" height="15" width="0">
+                <animate attributeType="XML" attributeName="width" from="0" to="100" dur="8s" fill="freeze"
+                    begin="startButton.click" />
+            </rect>
+            <rect id="startButton" style="cursor:pointer;" x="19.5" y="62.5" rx="5" height="25" width="80"
+                fill="#EFEFEF" stroke="black" stroke-width="1" />
+            <text x="60" y="80" text-anchor="middle" style="pointer-events:none;"> Click me. </text>
+        </svg>
+        <svg width="270" height="290">
+            <rect x=10 y=10 width=80 height=60 fill="yellow" stroke="navy" stroke-width="3">
+                <animate id="r1" attributeType="XML" attributeName="x" values="10;170;10" dur="2s"
+                    begin="0s;r4.end+2s" />
+            </rect>
+            <rect x=10 y=80 width=80 height=60 fill="red" stroke="navy" stroke-width="3">
+                <animate id="r2" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r1.end" />
+            </rect>
+            <rect x=10 y=150 width=80 height=60 fill="green" stroke="navy" stroke-width="3">
+                <animate id="r3" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r2.end" />
+            </rect>
+            <rect x=10 y=220 width=80 height=60 fill="blue" stroke="navy" stroke-width="3">
+                <animate id="r4" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r3.end" />
+            </rect>
+        </svg>
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <circle id="c1" cx="100" cy="100" r="50" fill="red" />
+            <script>
+                // Esperar a que el SVG cargue
+                const circle = document.getElementById("c1");
+                circle.addEventListener("click", () => {
+                    circle.setAttribute("fill", "blue");
+                });
+            </script>
+        </svg>
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <script xlink:href="script.js"></script>
+            <circle id="c1" cx="100" cy="100" r="50" fill="red" />
+        </svg>
+        <svg id="mysvg" width="200" height="200">
+            <rect id="r1" x="10" y="10" width="100" height="100" fill="orange" />
+        </svg>
+        <script>
+            const rect = document.getElementById("r1");
+            rect.setAttribute("fill", "purple");
+        </script>
+        <!-- Ejemplo 5 SVG JS-->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="100" onclick="alert('You have clicked the circle.')" />
+        </svg>
+        <!-- Ejemplo 6 SVG JS-->
+        <svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='600' width='820'>
+            <script type="text/ecmascript">
+                function changerect(evt) {
+                    var svgobj = evt.target;
+                    svgobj.style.opacity = 0.3;
+                    svgobj.setAttribute('x', 300);
+                }
+
+            </script>
+            <!-- Ejemplo 7 SVG JS-->
+            <svg width="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!--Un círculo -->
+                <circle id="c1" cx="80" cy="100" r="40" fill="tomato" />
+                <!--Un rectángulo-->
+                <rect id="r1" x="150" y="60" width="80" height="80" fill="steelblue" />
+                <script type="text/ecmascript">
+                    // Esperar a que exista el DOM del SVG
+                    window.addEventListener("load", () => {
+                        const circle = document.getElementById("c1");
+                        const rect = document.getElementById("r1");
+                        // Cambiar color al hacer click
+                        circle.addEventListener("click", () => {
+                            circle.setAttribute("fill", "gold");
+                        });
+                        // Mover rectángulo al acercar el mouse
+                        rect.addEventListener("mouseover", () => {
+                            rect.setAttribute("x", parseInt(rect.getAttribute("x")) + 10);
+                        });
+                        // Animación sencilla usando propiedades del SVG DOM
+                        let grow = true;
+                        setInterval(() => {
+                            let r = circle.r.baseVal.value;
+                            if (grow) r++; else r--;
+                            if (r > 50) grow = false;
+                            if (r < 30) grow = true;
+                            circle.r.baseVal.value = r;
+                        }, 30);
+                    });
+                </script>
+            </svg>
+    </div>
+</body>
+
+</html>
