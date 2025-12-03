@@ -124,6 +124,86 @@
                     });
                 </script>
             </svg>
+            <!-- Ejemplo 8 translate-->
+            <svg viewBox="0 0 100 100" height="300" style="background:grey">
+                <rect id="recti" x="0" y="0" width="50" height="50" fill="indigo" transform="translate(50 50)">
+            </svg>
+            <p>Valor de <code>X</code>: <input class="x" type="range" min="-25" max="75" value="50"></p>
+            <p>Valor de <code>Y</code>: <input class="y" type="range" min="-25" max="75" value="50"></p>
+            <script>
+                const x = document.querySelector(".x");
+                const y = document.querySelector(".y");
+                const recti = document.querySelector("#recti");
+                const output = document.querySelector("output");
+                const update = () => {
+                    output.value = `${x.value} ${y.value}`;
+                    recti.setAttribute("transform", `translate(${x.value} ${y.value})`);
+                }
+
+                x.addEventListener("input", () => update());
+                y.addEventListener("input", () => update());
+            </script>
+
+            <!-- Ejemplo 9 rotate-->
+            <svg viewBox="0 0 100 100" height="300" style="background:grey">
+                <rect id="rect4" x="0" y="0" width="50" height="50" fill="indigo" transform="rotate(45 50 50)">
+            </svg>
+            <p>Angulo de rotación:
+                <input id="a" type="range" min="0" max="360" value="20">
+            </p>
+            <p>Valor de <code>X</code>: <input id="xj" type="range" min="0" max="50" value="50"></p>
+            <p>Valor de <code>Y</code>: <input id="yj" type="range" min="0" max="50" value="50"></p>
+            <output id="outputp"> </output>
+            <script>
+                let a = document.getElementById("a");
+                let xj = document.getElementById("xj");
+                let yj = document.getElementById("yj");
+                const rect4 = document.querySelector("#rect4");
+                const outputp = document.querySelector("#outputp");
+                const update2v = () => {
+                    outputp.value = `${a.value} ${xj.value} ${yj.value}`;
+                    rect4.setAttribute("transform", `rotate(${a.value} ${xj.value} ${yj.value})`);
+                }
+                a.addEventListener("input", () => update2v());
+                xj.addEventListener("input", () => update2v());
+                yj.addEventListener("input", () => update2v());
+            </script>
+            <!-- Ejemplo 10 scale-->
+            <svg viewBox="0 0 100 100" height="300" style="background:grey">
+                <rect id="rect2" x="0" y="0" width="50" height="50" fill="indigo" transform="scale(1)">
+            </svg>
+            <p>Escala: <input class="s" type="range" min="0" max="2" step="0.1" value="1"></p>
+            <output id="o2"> </output>
+            <script>
+                const s = document.querySelector(".s");
+                const rect2 = document.getElementById("rect2");;
+                const output2 = document.getElementById("o2");
+                const update2 = () => {
+                    output2.value = `${s.value}`;
+                    rect2.setAttribute("transform", `scale(${s.value})`);
+                }
+                s.addEventListener("input", () => update2());
+            </script>
+            <!-- Ejemplo 11 skewXskewY -->
+            <svg viewBox="0 0 300 300" height="300" style="background:grey">
+                <rect id="srect" x="50" y="50" width="150" height="150" fill="indigo">
+            </svg>
+            <p>Valor de <code> SkewX</code>: <input id="sx" type="range" min="0" max="50" value="0"></p>
+            <p>Valor de <code>SkewY</code>: <input id="sy" type="range" min="0" max="50" value="0"></p>
+            <output id="sout"> </output>
+            <script>
+                let sx = document.getElementById("sx");
+                let sy = document.getElementById("sy");
+                let srect = document.getElementById("srect");
+                let soutput = document.getElementById("sout");
+                soutput.value = `${sx.value} ${sy.value}`;
+                const update4 = () => {
+                    soutput.value = `${sx.value} ${sy.value}`;
+                    srect.setAttribute("transform", `skewX(${sx.value}) skewY(${sy.value})`);
+                }
+                sx.addEventListener("input", () => update4());
+                sy.addEventListener("input", () => update4());
+            </script>
     </div>
 </body>
 

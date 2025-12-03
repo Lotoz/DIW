@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbol - Caligrama</title>
+</head>
+
+<body>
+
+    <!-- Un caligrama de un arbol floreciendo de a poco.-->
+    <svg width="1200" height="800" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#000" stroke-width="0.1">
+            <!-- Definimos un path con id -->
+            <path id="curve" d="M 2 10 L 3 8 L 4 6 L 5 8 L 5 10 
+                        M 5 10 L 5 8 L 6 6 L 7 5 L 8 6 L 8 10 
+                        M 8 10 L 8 6 L 9 5 L 10 4 L 11 5 L 11 6 L 12 7 L 12 10 
+                        M 11 6 L 12 5 L 13 4 L 14 5 L 15 7 L 15 10 L 12 10" />
+
+            <!-- Texto siguiendo el path -->
+            <text font-size="0.5">
+                <textPath href="#curve">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni ratione quibusdam harum maiores,
+                    laborum, distinctio fugiat deleniti est sed vel eum nostrum? Mollitia ipsum maxime perspiciatis
+                    dolorem?
+                    Aliquam, reprehenderit inventore!
+                </textPath>
+            </text>
+        </g>
+    </svg>
+
+
+</body>
+
+</html>
