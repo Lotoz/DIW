@@ -1,210 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>etiquetas HTML svg eventos Javascript Transformaciones</title>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="ejemplos">
-        <h2>Ejemplos</h2>
-        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+
+    <div class="container">
+        <h3>Ejemplo 1: Enlace y Animación</h3>
+        <svg viewBox="0 0 200 100" width="200" height="100">
             <path fill="none" stroke="lightgrey" d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
-            <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">
+            <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada" target="_blank">
                 <circle r="5" fill="red">
                     <animateMotion dur="10s" repeatCount="indefinite"
                         path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
                 </circle>
             </a>
         </svg>
-        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <rect x="10" y="35" height="15" width="0">
-                <animate attributeType="XML" attributeName="width" id="rectangulo1" to="100" dur="8s" fill="freeze"
-                    begin="2s" />
+    </div>
+
+    <div class="container">
+        <h3>Ejemplo 2: Sincronización</h3>
+        <svg width="120" height="120" viewBox="0 0 120 120">
+            <rect x="10" y="35" height="15" width="0" fill="blue">
+                <animate attributeName="width" id="rectA" to="100" dur="2s" fill="freeze" begin="0s; rectC.end" />
             </rect>
-            <rect x="35" y="60" height="15" width="0">
-                <animate attributeType="XML" attributeName="width" id="rectangulo2" to="75" dur="6s" fill="freeze"
-                    begin="rectangulo1.end" />
+            <rect x="35" y="60" height="15" width="0" fill="green">
+                <animate attributeName="width" id="rectB" to="75" dur="2s" fill="freeze" begin="rectA.end" />
             </rect>
-            <rect x="60" y="85" height="15" width="0">
-                <animate attributeType="XML" attributeName="width" id="rectangulo3" to="50" dur="4s" fill="freeze"
-                    begin="rectangulo2.end" />
-            </rect>
-        </svg>
-        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" version="1.1"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect x="10" y="35" height="15" width="0">
-                <animate attributeType="XML" attributeName="width" from="0" to="100" dur="8s" fill="freeze"
-                    begin="startButton.click" />
-            </rect>
-            <rect id="startButton" style="cursor:pointer;" x="19.5" y="62.5" rx="5" height="25" width="80"
-                fill="#EFEFEF" stroke="black" stroke-width="1" />
-            <text x="60" y="80" text-anchor="middle" style="pointer-events:none;"> Click me. </text>
-        </svg>
-        <svg width="270" height="290">
-            <rect x=10 y=10 width=80 height=60 fill="yellow" stroke="navy" stroke-width="3">
-                <animate id="r1" attributeType="XML" attributeName="x" values="10;170;10" dur="2s"
-                    begin="0s;r4.end+2s" />
-            </rect>
-            <rect x=10 y=80 width=80 height=60 fill="red" stroke="navy" stroke-width="3">
-                <animate id="r2" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r1.end" />
-            </rect>
-            <rect x=10 y=150 width=80 height=60 fill="green" stroke="navy" stroke-width="3">
-                <animate id="r3" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r2.end" />
-            </rect>
-            <rect x=10 y=220 width=80 height=60 fill="blue" stroke="navy" stroke-width="3">
-                <animate id="r4" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r3.end" />
+            <rect x="60" y="85" height="15" width="0" fill="orange">
+                <animate attributeName="width" id="rectC" to="50" dur="2s" fill="freeze" begin="rectB.end" />
             </rect>
         </svg>
-        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <circle id="c1" cx="100" cy="100" r="50" fill="red" />
-            <script>
-                // Esperar a que el SVG cargue
-                const circle = document.getElementById("c1");
-                circle.addEventListener("click", () => {
-                    circle.setAttribute("fill", "blue");
-                });
-            </script>
+    </div>
+
+    <div class="container">
+        <h3>Ejemplo 3: Eventos Click</h3>
+        <svg width="200" height="120">
+            <rect x="10" y="35" height="15" width="0" fill="purple">
+                <animate attributeName="width" from="0" to="100" dur="2s" fill="freeze" begin="btnStart.click" />
+            </rect>
+            <g id="btnStart" style="cursor:pointer;">
+                <rect x="19.5" y="62.5" rx="5" height="25" width="80" fill="#EFEFEF" stroke="black" stroke-width="1" />
+                <text x="60" y="80" text-anchor="middle" style="pointer-events:none; font-size:12px">Click me</text>
+            </g>
         </svg>
-        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <script xlink:href="script.js"></script>
-            <circle id="c1" cx="100" cy="100" r="50" fill="red" />
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 2: Elipse radios</h3>
+        <svg width="200" height="200">
+            <ellipse cx="100" cy="100" rx="80" ry="30" fill="purple" style="cursor:pointer">
+                <animate attributeName="rx" values="80;30;80" dur="1s" begin="click" fill="freeze" />
+                <animate attributeName="ry" values="30;80;30" dur="1s" begin="click" fill="freeze" />
+            </ellipse>
         </svg>
-        <svg id="mysvg" width="200" height="200">
-            <rect id="r1" x="10" y="10" width="100" height="100" fill="orange" />
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 2bis: 5 Elipses</h3>
+        <svg width="300" height="200">
+            <g transform="translate(150, 100)">
+                <ellipse rx="10" ry="5" fill="rgba(255,0,0,0.5)">
+                    <animate attributeName="rx" to="100" dur="1s" begin="click" fill="freeze" />
+                    <animate attributeName="ry" to="50" dur="1s" begin="click" fill="freeze" />
+                </ellipse>
+                <ellipse rx="10" ry="5" fill="rgba(0,255,0,0.5)">
+                    <animate attributeName="rx" to="80" dur="3s" begin="click" fill="freeze" />
+                    <animate attributeName="ry" to="80" dur="3s" begin="click" fill="freeze" />
+                </ellipse>
+                <ellipse rx="10" ry="5" fill="rgba(0,0,255,0.5)">
+                    <animate attributeName="rx" to="60" dur="2s" begin="click" fill="freeze" />
+                </ellipse>
+                <ellipse rx="10" ry="5" fill="rgba(255,255,0,0.5)">
+                    <animate attributeName="rx" to="40" dur="0.5s" begin="click" fill="freeze" />
+                    <animate attributeName="ry" to="90" dur="4s" begin="click" fill="freeze" />
+                </ellipse>
+                <ellipse rx="10" ry="5" fill="rgba(0,255,255,0.5)">
+                    <animate attributeName="rx" to="120" dur="1.5s" begin="click" fill="freeze" />
+                </ellipse>
+            </g>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 3: Mouseover Move</h3>
+        <svg width="300" height="150">
+            <circle cx="150" cy="75" r="20" fill="crimson">
+                <animateTransform attributeName="transform" type="translate" to="-50 0" dur="0.5s" begin="mouseover"
+                    fill="freeze" />
+                <animateTransform attributeName="transform" type="translate" to="0 0" dur="0.5s" begin="mouseout"
+                    fill="freeze" />
+            </circle>
+            <rect x="200" y="55" width="40" height="40" fill="navy">
+                <animateTransform attributeName="transform" type="translate" to="-50 0" dur="0.5s" begin="mouseover"
+                    fill="freeze" />
+                <animateTransform attributeName="transform" type="translate" to="0 0" dur="0.5s" begin="mouseout"
+                    fill="freeze" />
+            </rect>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 4: Click Rotate</h3>
+        <svg width="300" height="150">
+            <rect x="130" y="55" width="40" height="40" fill="orange" stroke="black" style="cursor:pointer">
+                <animateTransform attributeName="transform" type="rotate" from="0 150 75" to="360 150 75" dur="1s"
+                    begin="click" />
+            </rect>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 5: Secuencia y Set</h3>
+        <svg width="400" height="100">
+            <circle cy="50" r="10" fill="red">
+                <animate attributeName="cx" from="20" to="380" dur="2s" begin="0s" fill="freeze" />
+                <set attributeName="visibility" to="hidden" begin="4s" />
+            </circle>
+            <circle cy="50" r="10" fill="green">
+                <animate attributeName="cx" from="20" to="380" dur="2s" begin="2s" fill="freeze" />
+                <set attributeName="visibility" to="hidden" begin="4s" />
+            </circle>
+            <circle cy="50" r="10" fill="blue">
+                <animate attributeName="cx" from="20" to="380" dur="2s" begin="4s" fill="freeze" />
+            </circle>
+            <circle cy="50" r="10" fill="black">
+                <animate attributeName="cx" from="20" to="380" dur="2s" begin="6s" fill="freeze" />
+            </circle>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 6: JS Opacidad</h3>
+        <svg width="200" height="100">
+            <rect id="rectEx6" x="50" y="25" width="100" height="50" fill="magenta" stroke="black"
+                style="cursor:pointer" />
         </svg>
         <script>
-            const rect = document.getElementById("r1");
-            rect.setAttribute("fill", "purple");
+            {
+                const r6 = document.getElementById("rectEx6");
+                r6.addEventListener("click", () => {
+                    r6.style.opacity = "0.5";
+                    alert("Alerta activada");
+                });
+            }
         </script>
-        <!-- Ejemplo 5 SVG JS-->
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="100" onclick="alert('You have clicked the circle.')" />
-        </svg>
-        <!-- Ejemplo 6 SVG JS-->
-        <svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='600' width='820'>
-            <script type="text/ecmascript">
-                function changerect(evt) {
-                    var svgobj = evt.target;
-                    svgobj.style.opacity = 0.3;
-                    svgobj.setAttribute('x', 300);
-                }
-
-            </script>
-            <!-- Ejemplo 7 SVG JS-->
-            <svg width="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <!--Un círculo -->
-                <circle id="c1" cx="80" cy="100" r="40" fill="tomato" />
-                <!--Un rectángulo-->
-                <rect id="r1" x="150" y="60" width="80" height="80" fill="steelblue" />
-                <script type="text/ecmascript">
-                    // Esperar a que exista el DOM del SVG
-                    window.addEventListener("load", () => {
-                        const circle = document.getElementById("c1");
-                        const rect = document.getElementById("r1");
-                        // Cambiar color al hacer click
-                        circle.addEventListener("click", () => {
-                            circle.setAttribute("fill", "gold");
-                        });
-                        // Mover rectángulo al acercar el mouse
-                        rect.addEventListener("mouseover", () => {
-                            rect.setAttribute("x", parseInt(rect.getAttribute("x")) + 10);
-                        });
-                        // Animación sencilla usando propiedades del SVG DOM
-                        let grow = true;
-                        setInterval(() => {
-                            let r = circle.r.baseVal.value;
-                            if (grow) r++; else r--;
-                            if (r > 50) grow = false;
-                            if (r < 30) grow = true;
-                            circle.r.baseVal.value = r;
-                        }, 30);
-                    });
-                </script>
-            </svg>
-            <!-- Ejemplo 8 translate-->
-            <svg viewBox="0 0 100 100" height="300" style="background:grey">
-                <rect id="recti" x="0" y="0" width="50" height="50" fill="indigo" transform="translate(50 50)">
-            </svg>
-            <p>Valor de <code>X</code>: <input class="x" type="range" min="-25" max="75" value="50"></p>
-            <p>Valor de <code>Y</code>: <input class="y" type="range" min="-25" max="75" value="50"></p>
-            <script>
-                const x = document.querySelector(".x");
-                const y = document.querySelector(".y");
-                const recti = document.querySelector("#recti");
-                const output = document.querySelector("output");
-                const update = () => {
-                    output.value = `${x.value} ${y.value}`;
-                    recti.setAttribute("transform", `translate(${x.value} ${y.value})`);
-                }
-
-                x.addEventListener("input", () => update());
-                y.addEventListener("input", () => update());
-            </script>
-
-            <!-- Ejemplo 9 rotate-->
-            <svg viewBox="0 0 100 100" height="300" style="background:grey">
-                <rect id="rect4" x="0" y="0" width="50" height="50" fill="indigo" transform="rotate(45 50 50)">
-            </svg>
-            <p>Angulo de rotación:
-                <input id="a" type="range" min="0" max="360" value="20">
-            </p>
-            <p>Valor de <code>X</code>: <input id="xj" type="range" min="0" max="50" value="50"></p>
-            <p>Valor de <code>Y</code>: <input id="yj" type="range" min="0" max="50" value="50"></p>
-            <output id="outputp"> </output>
-            <script>
-                let a = document.getElementById("a");
-                let xj = document.getElementById("xj");
-                let yj = document.getElementById("yj");
-                const rect4 = document.querySelector("#rect4");
-                const outputp = document.querySelector("#outputp");
-                const update2v = () => {
-                    outputp.value = `${a.value} ${xj.value} ${yj.value}`;
-                    rect4.setAttribute("transform", `rotate(${a.value} ${xj.value} ${yj.value})`);
-                }
-                a.addEventListener("input", () => update2v());
-                xj.addEventListener("input", () => update2v());
-                yj.addEventListener("input", () => update2v());
-            </script>
-            <!-- Ejemplo 10 scale-->
-            <svg viewBox="0 0 100 100" height="300" style="background:grey">
-                <rect id="rect2" x="0" y="0" width="50" height="50" fill="indigo" transform="scale(1)">
-            </svg>
-            <p>Escala: <input class="s" type="range" min="0" max="2" step="0.1" value="1"></p>
-            <output id="o2"> </output>
-            <script>
-                const s = document.querySelector(".s");
-                const rect2 = document.getElementById("rect2");;
-                const output2 = document.getElementById("o2");
-                const update2 = () => {
-                    output2.value = `${s.value}`;
-                    rect2.setAttribute("transform", `scale(${s.value})`);
-                }
-                s.addEventListener("input", () => update2());
-            </script>
-            <!-- Ejemplo 11 skewXskewY -->
-            <svg viewBox="0 0 300 300" height="300" style="background:grey">
-                <rect id="srect" x="50" y="50" width="150" height="150" fill="indigo">
-            </svg>
-            <p>Valor de <code> SkewX</code>: <input id="sx" type="range" min="0" max="50" value="0"></p>
-            <p>Valor de <code>SkewY</code>: <input id="sy" type="range" min="0" max="50" value="0"></p>
-            <output id="sout"> </output>
-            <script>
-                let sx = document.getElementById("sx");
-                let sy = document.getElementById("sy");
-                let srect = document.getElementById("srect");
-                let soutput = document.getElementById("sout");
-                soutput.value = `${sx.value} ${sy.value}`;
-                const update4 = () => {
-                    soutput.value = `${sx.value} ${sy.value}`;
-                    srect.setAttribute("transform", `skewX(${sx.value}) skewY(${sy.value})`);
-                }
-                sx.addEventListener("input", () => update4());
-                sy.addEventListener("input", () => update4());
-            </script>
     </div>
+
+    <div class="container">
+        <h3>Ejercicio 7: Rotación Texto</h3>
+        <svg width="300" height="200">
+            <rect x="0" y="100" width="300" height="100" fill="green" />
+            <rect x="0" y="0" width="300" height="100" fill="purple" />
+            <text x="150" y="110" font-family="Arial" font-size="40" font-weight="bold" fill="white" stroke="cyan"
+                stroke-width="1" text-anchor="middle" style="cursor:pointer">
+                Málaga!
+                <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="360 150 110" dur="1s"
+                    begin="click" />
+            </text>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 8: Path Editor</h3>
+        <svg id="lienzoVuelo" width="300" height="200"
+            style="border:1px solid #000; cursor: pointer; background-color: #f9f9f9;">
+
+            <path id="rutaVuelo" d="M 10 180 Q 50 10 150 100 T 290 180" fill="none" stroke="steelblue" stroke-width="2"
+                stroke-dasharray="5,5" />
+
+            <circle r="10" fill="crimson">
+                <animateMotion dur="4s" repeatCount="indefinite" begin="lienzoVuelo.click" end="lienzoVuelo.dblclick"
+                    fill="freeze">
+                    <mpath xlink:href="#rutaVuelo" />
+                </animateMotion>
+            </circle>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h3>Ejercicio 9: Panel Control</h3>
+        <div style="display:flex;">
+            <svg id="svgEx9" width="300" height="300" style="background:#ddd; margin-right: 20px;">
+                <rect id="boxTotal" x="100" y="100" width="100" height="100" fill="rebeccapurple" />
+                <line x1="150" y1="0" x2="150" y2="300" stroke="#999" />
+                <line x1="0" y1="150" x2="300" y2="150" stroke="#999" />
+            </svg>
+
+            <div class="controls">
+                <div style="margin-bottom:10px;">
+                    <strong>Translate</strong><br>
+                    <label>X:</label> <input id="tX" type="range" min="-100" max="100" value="0"><br>
+                    <label>Y:</label> <input id="tY" type="range" min="-100" max="100" value="0">
+                </div>
+
+                <div style="margin-bottom:10px;">
+                    <strong>Rotate</strong><br>
+                    <label>Angle:</label> <input id="rA" type="range" min="0" max="360" value="0">
+                </div>
+
+                <div style="margin-bottom:10px;">
+                    <strong>Scale</strong><br>
+                    <label>Factor:</label> <input id="sS" type="range" min="0.1" max="2" step="0.1" value="1">
+                </div>
+
+                <div style="margin-bottom:10px;">
+                    <strong>Skew</strong><br>
+                    <label>Skew X:</label> <input id="kX" type="range" min="-45" max="45" value="0"><br>
+                    <label>Skew Y:</label> <input id="kY" type="range" min="-45" max="45" value="0">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            {
+                const box = document.getElementById("boxTotal");
+                const inputs = {
+                    tx: document.getElementById("tX"),
+                    ty: document.getElementById("tY"),
+                    ra: document.getElementById("rA"),
+                    ss: document.getElementById("sS"),
+                    kx: document.getElementById("kX"),
+                    ky: document.getElementById("kY")
+                };
+
+                function updateEx9() {
+                    const transformString = `
+                        translate(${inputs.tx.value} ${inputs.ty.value}) 
+                        rotate(${inputs.ra.value} 150 150) 
+                        scale(${inputs.ss.value}) 
+                        skewX(${inputs.kx.value}) 
+                        skewY(${inputs.ky.value})
+                    `.replace(/\s+/g, ' ').trim();
+
+                    box.setAttribute("transform", transformString);
+                }
+
+                Object.values(inputs).forEach(input => {
+                    input.addEventListener("input", updateEx9);
+                });
+            }
+        </script>
+    </div>
+
 </body>
 
 </html>

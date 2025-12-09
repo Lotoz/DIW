@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios SVG Avanzado - Zamira</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Ejercicio 2</h2>
+        <svg width="400" height="120" viewBox="0 0 400 120">
+            <defs>
+                <linearGradient id="miDegradado" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:gold; stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:crimson; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:limegreen; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <text x="50%" y="80" font-family="Verdana" font-size="60" font-weight="bold" fill="url(#miDegradado)"
+                text-anchor="middle">
+                ZAMIRA
+            </text>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h2>Ejercicio 3</h2>
+        <svg width="400" height="150" viewBox="0 0 400 150" style="background-color:#222;">
+            <text x="50%" y="90" font-family="Arial Black" font-size="60" fill="none" stroke="cyan" stroke-width="2"
+                text-anchor="middle" stroke-dasharray="1000" stroke-dashoffset="1000">
+
+                ZAMIRA
+
+                <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite" />
+
+                <animate attributeName="stroke" values="cyan;magenta;yellow;cyan" dur="3s" repeatCount="indefinite" />
+
+                <animateTransform attributeName="transform" type="rotate" values="-5 200 90; 5 200 90; -5 200 90"
+                    dur="2s" repeatCount="indefinite" />
+            </text>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h2>Ejercicio 4</h2>
+        <svg width="300" height="300" viewBox="0 0 300 300">
+            <defs>
+                <clipPath id="recorteTriangulo">
+                    <polygon points="150,10 280,280 20,280" />
+                </clipPath>
+            </defs>
+            <image href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=300&q=80"
+                width="300" height="300" clip-path="url(#recorteTriangulo)" />
+        </svg>
+    </div>
+
+    <div class="container">
+        <h2>Ejercicio 5</h2>
+        <svg width="500" height="150" viewBox="0 0 500 150">
+            <defs>
+                <clipPath id="textoRecorteZamira">
+                    <text x="50%" y="110" font-family="Impact" font-size="100" font-weight="bold" text-anchor="middle">
+                        ZAMIRA
+                    </text>
+                </clipPath>
+            </defs>
+
+            <image href="https://media.giphy.com/media/12ffdI8DuUi2RO/giphy.gif" width="500" height="300" y="-50"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#textoRecorteZamira)" />
+        </svg>
+    </div>
+
+    <div class="container">
+        <h2>Ejercicio 6</h2>
+        <svg width="400" height="300" viewBox="0 0 400 300">
+            <defs>
+                <mask id="mascaraLinterna" maskUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="400" height="300" fill="black" />
+
+                    <rect width="120" height="80" fill="white">
+                        <animate attributeName="x" values="0;280;0;100;0" dur="8s" repeatCount="indefinite" />
+                        <animate attributeName="y" values="0;220;50;200;0" dur="10s" repeatCount="indefinite" />
+                    </rect>
+                </mask>
+            </defs>
+
+            <rect width="400" height="300" fill="black" />
+
+            <image href="wally.jpg" width="400" height="300" preserveAspectRatio="xMidYMid slice"
+                mask="url(#mascaraLinterna)" />
+
+            <text x="200" y="290" font-family="Courier" font-weight="bold" fill="white" text-anchor="middle"
+                style="pointer-events:none; text-shadow: 1px 1px 2px black;">
+                Buscando...
+            </text>
+        </svg>
+    </div>
+
+</body>
+
+</html>

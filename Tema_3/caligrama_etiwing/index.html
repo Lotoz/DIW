@@ -4,33 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbol - Caligrama</title>
+    <title>Hoja - Caligrama</title>
 </head>
 
 <body>
+    <svg width="910" height="910" viewBox="-10 -985 850 1140" xmlns="http://www.w3.org/2000/svg">
+        <title>Caligrama Sostenible</title>
 
-    <!-- Un caligrama de un arbol floreciendo de a poco.-->
-    <svg width="1200" height="800" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#000" stroke-width="0.1">
-            <!-- Definimos un path con id -->
-            <path id="curve" d="M 2 10 L 3 8 L 4 6 L 5 8 L 5 10 
-                        M 5 10 L 5 8 L 6 6 L 7 5 L 8 6 L 8 10 
-                        M 8 10 L 8 6 L 9 5 L 10 4 L 11 5 L 11 6 L 12 7 L 12 10 
-                        M 11 6 L 12 5 L 13 4 L 14 5 L 15 7 L 15 10 L 12 10" />
+        <defs>
+            <linearGradient id="gradienteVida" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#b71c1c;stop-opacity:1" />
+                <stop offset="25%" style="stop-color:#e65100;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#827717;stop-opacity:1" />
+                <stop offset="75%" style="stop-color:#2e7d32;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#004d00;stop-opacity:1" />
+            </linearGradient>
 
-            <!-- Texto siguiendo el path -->
-            <text font-size="0.5">
-                <textPath href="#curve">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni ratione quibusdam harum maiores,
-                    laborum, distinctio fugiat deleniti est sed vel eum nostrum? Mollitia ipsum maxime perspiciatis
-                    dolorem?
-                    Aliquam, reprehenderit inventore!
-                </textPath>
-            </text>
-        </g>
+            <style>
+                text {
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    text-transform: uppercase;
+                    text-anchor: middle;
+                    fill: url(#gradienteVida);
+                }
+
+                /* Estilos de fuente */
+                .tallo {
+                    font-size: 34px;
+                    font-weight: 900;
+                    letter-spacing: 12px;
+                }
+
+                .borde {
+                    font-size: 17px;
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                }
+
+                .punta {
+                    font-size: 15px;
+                    font-weight: 700;
+                    letter-spacing: 0px;
+                }
+
+                .nervio {
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+
+                .base {
+                    font-size: 15px;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                }
+
+                .firma {
+                    font-size: 26px;
+                    font-weight: bold;
+                    fill: #004d00;
+                    text-transform: none;
+                }
+            </style>
+
+            <path id="pathBase" transform="scale(1.8)" d="M 200 -67 C 268 -9 338 -5 411 -70" />
+
+            <path id="pathIzq" transform="scale(1.8)" d="M 191 -80 C 133 -135 140 -237 203 -347" />
+
+            <path id="pathDer" transform="scale(1.8)" d="M 418 -89 C 471 -130 483 -247 413 -348" />
+
+            <path id="pathPuntaIzq" transform="scale(1.8)" d="M 215 -368 L 303 -553" />
+
+            <path id="pathPuntaDer" transform="scale(1.8)" d="M 405 -375 L 320 -545" />
+
+            <path id="pathTallo" transform="scale(1.8)" d="M 302 -80 L 301 -468" />
+
+            <path id="venaIzqHigh" transform="scale(1.8)" d="M 289 -239 L 248 -355" />
+            <path id="venaDerHigh" transform="scale(1.8)" d="M 318 -239 L 360 -352" />
+            <path id="venaIzqLow" transform="scale(1.8)" d="M 291 -111 L 212 -217" />
+            <path id="venaDerLow" transform="scale(1.8)" d="M 316 -111 L 395 -197" />
+
+            <path id="pathRaiz" transform="scale(1.8)" d="M 308 -13 C 299 25 319 88 352 73" />
+
+        </defs>
+
+        <rect x="-100" y="-1100" width="1300" height="1300" fill="white" />
+
+        <text class="tallo" dy="12">
+            <textPath href="#pathTallo" startOffset="50%">--------------</textPath>
+        </text>
+
+        <text class="base" dy="-8">
+            <textPath href="#pathBase" startOffset="50%">SO MUCH LOVE FOR THE EARTH</textPath>
+        </text>
+
+        <text class="borde" dy="-6">
+            <textPath href="#pathIzq" startOffset="50%">MY VAST MEADOWS TURN BLACK</textPath>
+        </text>
+        <text class="borde" dy="22">
+            <textPath href="#pathDer" startOffset="50%">WHILE THEY KEEP ARGUING BACK</textPath>
+        </text>
+
+        <text class="punta" dy="-6">
+            <textPath href="#pathPuntaIzq" startOffset="50%">MY VOICE BEGINS TO BREAK</textPath>
+        </text>
+        <text class="punta" dy="-6">
+            <textPath href="#pathPuntaDer" startOffset="50%">A WEARY SIGH ESCAPES</textPath>
+        </text>
+
+        <text class="nervio" dy="-4">
+            <textPath href="#venaIzqLow" startOffset="50%">YET DAILY DEEP IN SORROW</textPath>
+        </text>
+        <text class="nervio" dy="-4">
+            <textPath href="#venaDerLow" startOffset="50%">I DO NOT SEE THAT LOVE</textPath>
+        </text>
+
+        <text class="nervio" dy="-4">
+            <textPath href="#venaIzqHigh" startOffset="50%">IF DAILY I AM WORSE OFF</textPath>
+        </text>
+        <text class="nervio" dy="-3">
+            <textPath href="#venaDerHigh" startOffset="50%"> Create for ZamiraG,Lotoz.</textPath>
+        </text>
+
+        <text class="firma">
+            <textPath href="#pathRaiz" startOffset="50%">For the earth</textPath>
+        </text>
+
     </svg>
-
-
 </body>
 
 </html>

@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 0;
+  color: #333;
+}
+
+svg {
+  background-color: #fff;
+  border: 1px dashed #ccc;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.controls {
+  background: #eee;
+  padding: 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input[type="range"] {
+  vertical-align: middle;
+}

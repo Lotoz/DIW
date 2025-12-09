@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-09 Etiquetas Textos SVG & Css</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .ejemplos {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        svg {
+            border: 1px dashed #ddd;
+            background: #fafafa;
+            margin: 10px 0;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ejemplos">
+        <h2>Ejemplos Iniciales:</h2>
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <style>
+                    #MyRect {
+                        stroke: black;
+                        fill: red;
+                    }
+                </style>
+            </defs>
+            <rect x="10" height="180" y="10" width="180" id="MyRect" />
+        </svg>
+
+        <hr>
+
+        <svg viewBox="-100 -100 310 310" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            <defs>
+                <style>
+                    #circ:hover {
+                        stroke: black;
+                        fill: blue;
+                    }
+                </style>
+            </defs>
+            <circle cx="100" cy="100" r="100" stroke="darkorange" fill="transparent" stroke-width="15" id="circ" />
+        </svg>
+
+        <hr>
+
+        <svg viewBox="-100 -100 310 310" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            <defs>
+                <style>
+                    #amarillo1:hover {
+                        stroke: #ffffAA;
+                    }
+
+                    #amarillo2:hover {
+                        stroke: #ffff66;
+                    }
+
+                    #amarillo3:hover {
+                        stroke: #FFFF00;
+                    }
+
+                    #amarillo4:hover {
+                        stroke: orange;
+                    }
+
+                    #amarillo5:hover {
+                        stroke: #AA5500;
+                    }
+                </style>
+            </defs>
+            <circle cx="100" cy="100" r="100" stroke="darkorange" fill="transparent" stroke-width="15" id="amarillo5" />
+            <circle cx="100" cy="100" r="80" stroke="orange" fill="transparent" stroke-width="12" id="amarillo1" />
+            <circle cx="100" cy="100" r="60" stroke="#EEEE00" fill="transparent" stroke-width="9" id="amarillo3" />
+            <circle cx="100" cy="100" r="40" stroke="#ffff00" fill="transparent" stroke-width="6" id="amarillo2" />
+            <circle cx="100" cy="100" r="20" stroke="#ffff77" fill="transparent" stroke-width="3" id="amarillo1" />
+        </svg>
+
+        <hr>
+
+        <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    text {
+                        dominant-baseline: hanging;
+                        font: 28px Verdana, Helvetica, Arial, sans-serif;
+                    }
+                </style>
+            </defs>
+            <text x="5" y="5"> This is bold and red </text>
+        </svg>
+
+        <hr>
+
+        <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    #texto {
+                        dominant-baseline: hanging;
+                        font: 28px Verdana, Helvetica, Arial, sans-serif;
+                        stroke: red
+                    }
+
+                    #texto:hover {
+                        stroke: green;
+                        fill: yellow
+                    }
+                </style>
+            </defs>
+            <text id="texto" x="5" y="5"> This is bold and red </text>
+        </svg>
+
+        <hr>
+
+        <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,20 L180,20 M20,50 L180,50 M20,80 L180,80" stroke="grey" />
+            <text dominant-baseline="auto" x="30" y="20">Auto</text>
+            <text dominant-baseline="middle" x="30" y="50">Middle</text>
+            <text dominant-baseline="hanging" x="30" y="80">Hanging</text>
+        </svg>
+
+        <hr>
+
+        <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+            <text x="5" y="5"> This is <tspan font-weight="bold" fill="red"> bold and red</tspan> </text>
+            <style>
+                text {
+                    dominant-baseline: hanging;
+                    font: 28px Verdana, Helvetica, Arial, sans-serif;
+                }
+            </style>
+        </svg>
+
+        <hr>
+
+        <svg width="300" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+            <path id="my_path" d="M 20,20 C 80,60 100,40 120,20" fill="transparent" />
+            <text>
+                <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path">
+                    Viva el Barcelona
+                </textPath>
+            </text>
+            <style>
+                text {
+                    dominant-baseline: hanging;
+                    font: 28px Verdana, Helvetica, Arial, sans-serif;
+                }
+            </style>
+        </svg>
+
+        <hr>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="500" height="200">
+            <defs>
+                <linearGradient id="linearGradient2" gradientTransform="rotate(90)">
+                    <stop offset="5%" stop-color="blue" />
+                    <stop offset="95%" stop-color="green" />
+                </linearGradient>
+            </defs>
+            <path id="my_path3_ex" d="M 20,50 C 80,90 100,70 300,50 " fill="transparent" stroke-width="2" />
+            <text font-size="30">
+                <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path3_ex"
+                    stroke="url('#linearGradient2')" fill="url('#linearGradient2')">
+                    Viva Torremolinos
+                </textPath>
+            </text>
+        </svg>
+
+        <hr>
+
+        <svg viewBox="0 0 15 15" width="200" height="200" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <linearGradient id="linearGradient1" gradientTransform="rotate(90)">
+                    <stop offset="5%" stop-color="gold" />
+                    <stop offset="95%" stop-color="red" />
+                </linearGradient>
+                <radialGradient id="radialGradient1">
+                    <stop offset="10%" stop-color="gold" />
+                    <stop offset="95%" stop-color="red" />
+                </radialGradient>
+            </defs>
+            <circle cx="5" cy="5" r="4" fill="url('#linearGradient1')" />
+            <circle cx="10" cy="5" r="4" fill="url('#radialGradient1')" />
+        </svg>
+    </div>
+
+    <div>
+        <h2>Ejercicio 2</h2>
+        <svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+            <script>
+                function ponerVerde(elemento) {
+                    var colorActual = elemento.getAttribute("fill");
+                    elemento.setAttribute("data-original", colorActual);
+                    elemento.setAttribute("fill", "green");
+                    elemento.style.cursor = "pointer";
+                }
+                function restaurarColor(elemento) {
+                    var colorOriginal = elemento.getAttribute("data-original");
+                    if (colorOriginal) {
+                        elemento.setAttribute("fill", colorOriginal);
+                    }
+                }
+            </script>
+            <rect x="10" y="10" width="80" height="80" fill="#6a9bd1" onmouseover="ponerVerde(this)"
+                onmouseout="restaurarColor(this)" />
+            <polygon points="150,10 110,90 190,90" fill="#ffaa33" onmouseover="ponerVerde(this)"
+                onmouseout="restaurarColor(this)" />
+            <circle cx="250" cy="50" r="40" fill="red" onmouseover="ponerVerde(this)"
+                onmouseout="restaurarColor(this)" />
+        </svg>
+
+        <h2>Ejercicio 3</h2>
+        <svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    #cuadrado:hover {
+                        fill: #a3c2e6;
+                        cursor: pointer;
+                    }
+
+                    #triangulo:hover {
+                        fill: #ffcc80;
+                        cursor: pointer;
+                    }
+
+                    #circulo:hover {
+                        fill: #ff6666;
+                        cursor: pointer;
+                    }
+                </style>
+            </defs>
+            <rect id="cuadrado" x="10" y="10" width="80" height="80" fill="#6a9bd1" />
+            <polygon id="triangulo" points="150,10 110,90 190,90" fill="#ffaa33" />
+            <circle id="circulo" cx="250" cy="50" r="40" fill="red" />
+        </svg>
+
+        <h2>Ejercicio 4</h2>
+        <svg width="300" height="120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="40" font-family="Georgia" font-size="25" fill="black">
+                IESPLAYAMAR
+            </text>
+        </svg>
+        <h2>Ejercicio 5 </h2>
+
+        <h2>Ejercicio 6</h2>
+        <svg width=" 250" height="120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="40" font-family="Georgia" font-size="25">
+                <tspan fill="#DC2432">FR</tspan>
+                <tspan fill="#999999">AN</tspan>
+                <tspan fill="#0f2493">CIA</tspan>
+            </text>
+        </svg>
+
+        <h2>Ejercicio 7</h2>
+        <svg width="400" height="120" xmlns="http://www.w3.org/2000/svg" style="border: 1px dashed #ccc;">
+            <defs>
+                <style>
+                    .texto-espana {
+                        font-family: Georgia;
+                        font-size: 25px;
+                        cursor: pointer;
+                        /* Evita que el usuario seleccione el texto al pasar el ratón rápido */
+                        user-select: none;
+                    }
+
+                    .texto-espana tspan {
+                        transition: font-size 0.2s ease, fill 0.2s ease;
+                    }
+
+                    .texto-espana tspan:hover {
+                        font-size: 60px;
+                        /* Un poco más grande para que se note bien */
+                        fill: red;
+                        font-weight: bold;
+                    }
+                </style>
+            </defs>
+
+            <text x="20" y="60" class="texto-espana" dominant-baseline="middle">
+                <tspan>E</tspan>
+                <tspan>S</tspan>
+                <tspan>P</tspan>
+                <tspan>A</tspan>
+                <tspan>Ñ</tspan>
+                <tspan>A</tspan>
+            </text>
+        </svg>
+
+        <h2>Ejercicio 8</h2>
+        <svg width="400" height="130" viewBox="0 -30 400 130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <path id="curvaSuave" d="M 20,80 Q 200,-20 380,80" fill="none" />
+            </defs>
+            <text font-family="Georgia" font-size="25" fill="#333">
+                <textPath href="#curvaSuave" startOffset="50%" text-anchor="middle">
+                    IES PLAYAMAR
+                </textPath>
+            </text>
+        </svg>
+
+        <h2>Ejercicio 9</h2>
+        <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="arcoiris" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="red" />
+                    <stop offset="20%" stop-color="orange" />
+                    <stop offset="40%" stop-color="yellow" />
+                    <stop offset="60%" stop-color="green" />
+                    <stop offset="80%" stop-color="blue" />
+                    <stop offset="100%" stop-color="violet" />
+                </linearGradient>
+                <radialGradient id="anillos">
+                    <stop offset="0%" stop-color="blue" />
+                    <stop offset="10%" stop-color="blue" />
+                    <stop offset="10%" stop-color="green" />
+                    <stop offset="20%" stop-color="green" />
+                    <stop offset="20%" stop-color="blue" />
+                    <stop offset="30%" stop-color="blue" />
+                    <stop offset="30%" stop-color="green" />
+                    <stop offset="40%" stop-color="green" />
+                    <stop offset="40%" stop-color="blue" />
+                    <stop offset="50%" stop-color="blue" />
+                    <stop offset="50%" stop-color="green" />
+                    <stop offset="60%" stop-color="green" />
+                    <stop offset="60%" stop-color="blue" />
+                    <stop offset="70%" stop-color="blue" />
+                    <stop offset="70%" stop-color="green" />
+                    <stop offset="80%" stop-color="green" />
+                    <stop offset="80%" stop-color="blue" />
+                    <stop offset="100%" stop-color="blue" />
+                </radialGradient>
+            </defs>
+            <circle cx="75" cy="75" r="60" fill="url(#arcoiris)" />
+            <circle cx="225" cy="75" r="60" fill="url(#anillos)" />
+        </svg>
+
+        <h2>Ejercicio 10</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="500" height="200">
+            <defs>
+                <linearGradient id="gradienteArcoiris" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="red" />
+                    <stop offset="20%" stop-color="yellow" />
+                    <stop offset="50%" stop-color="green" />
+                    <stop offset="80%" stop-color="cyan" />
+                    <stop offset="100%" stop-color="blue" />
+                </linearGradient>
+            </defs>
+
+            <path id="my_path3_ex" d="M 20,50 C 80,90 100,70 300,50 " fill="transparent" />
+
+            <text font-family="Arial" font-weight="bold" font-size="30">
+                <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path3_ex"
+                    fill="url('#gradienteArcoiris')" stroke="url('#gradienteArcoiris')" stroke-width="0.5">
+                    Viva Torremolinos
+                </textPath>
+            </text>
+        </svg>
+        <h2>Ejercicio 11</h2>
+
+        <svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+
+                <path id="corazonPath"
+                    d="M200,100 C200,50 100,50 100,100 C100,160 200,250 200,250 C200,250 300,160 300,100 C300,50 200,50 200,100 Z"
+                    fill="none" />
+
+            </defs>
+
+            <text font-family="Georgia" font-size="11" fill="#a00">
+
+                <textPath href="#corazonPath">
+
+                    Me gustas cuando callas porque estás como ausente, y me oyes desde lejos, y mi voz no te toca.
+
+                    Parece que los ojos se te hubieran volado
+
+                </textPath>
+
+            </text>
+
+        </svg>
+
+    </div>
+</body>
+
+</html>
