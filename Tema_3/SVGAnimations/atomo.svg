@@ -1,0 +1,31 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="myGradient" gradientTransform="rotate(90)">
+            <stop offset="5%" stop-color="#fcac00" />
+            <stop offset="95%" stop-color="red" />
+        </linearGradient>
+
+    </defs>
+    <defs>
+        <linearGradient id="lineas" gradientTransform="rotate(90)">
+            <stop offset="5%" stop-color="#fff5df" />
+            <stop offset="95%" stop-color="rgba(22,73,255,0.527)" />
+        </linearGradient>
+
+    </defs>
+    <g class="layer">
+        <title>Layer 1</title>
+        <ellipse cx="309" cy="236.5" fill="url('#lineas')" id="svg_4" rx="175" ry="79.5" stroke="#000000"
+            stroke-width="5" />
+        <ellipse cx="240" cy="181" fill="url('#lineas')" id="svg_8" rx="1" ry="0" stroke="#000000" stroke-width="5" />
+        <ellipse cx="307" cy="228" fill="url('#lineas')" id="svg_9" rx="84" ry="164" stroke="#000000" stroke-width="5"
+            transform="matrix(1, 0, 0, 1, 0, 0)" />
+        <ellipse cx="314.07293" cy="240.06116" fill="url('#lineas')" id="svg_12" rx="79" ry="178.4463" stroke="#000000"
+            stroke-width="5" transform="rotate(46.361, 314.073, 240.061)" />
+        <ellipse cx="145" cy="-35" fill="url('#lineas')" id="svg_13" rx="1" ry="0" stroke="#000000" stroke-width="5" />
+        <ellipse cx="312.0001" cy="237.00009" fill="url('#lineas')" id="svg_14" rx="79" ry="178.4463" stroke="#000000"
+            stroke-width="5" transform="rotate(-45, 312, 237)" />
+        <ellipse cx="305" cy="239" fill="url('#myGradient')" id="svg_15" rx="46" ry="46" stroke="#000000"
+            stroke-width="0" />
+    </g>
+</svg>

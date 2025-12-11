@@ -4,8 +4,12 @@
             <stop offset="5%" stop-color="gold" />
             <stop offset="95%" stop-color="red" />
         </linearGradient>
-
+        <linearGradient id="myGradient2" gradientTransform="rotate(90)">
+            <stop offset="5%" stop-color="red" />
+            <stop offset="95%" stop-color="gold" />
+        </linearGradient>
     </defs>
     <circle cx="100" cy="100" r="75" fill="url('#myGradient')" />
-    <circle cx="100" cy="100" r="50" fill="url('#myGradient')" />
+    <circle cx="100" cy="100" r="50" fill="url('#myGradient2')" />
+    <circle cx="100" cy="100" r="25" fill="url('#myGradient')" />
 </svg>
