@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            margin: 10px;
+            width: 500px
+        }
+
+        div.c1 {
+            padding: 50px 20px 50px 20px;
+            border: 20px solid;
+            border-color: #0f0 #f00;
+            margin: 100px 200px 25px 50px;
+        }
+
+        div.c2 {
+            padding: 50px 50px 10px;
+            /* izqder arr abajo */
+            border: 10px solid;
+            border-color: #0f0 #f00 #00f;
+            border-style: solid dashed dotted double;
+            margin: 50px 200px 150px 50px;
+        }
+
+        div.c3 {
+            padding: 50px 100px;
+            /* arrabajo izqder  */
+            border-top: 32px solid #ff0000;
+            border-left: 30px solid #ffff00;
+            border-right: 30px solid #0000ff;
+            border-bottom: 30px solid #00ff00;
+
+
+        }
+
+        div.c4 {
+            padding: 50px;
+            border-top: 2px solid #000;
+            border-color: #0f0 #f00 #00f;
+        }
+
+
+        div.c5 {
+            padding: 50px;
+            border: 20px solid;
+            border-color: #0f0 #f00 #00f;
+        }
+
+        @media print {
+            div.c1 {
+                border: 10px solid #fa0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1"> Hola </div>
+    <div class="c2"> Hola</div>
+    <div class="c3"> Hola</div>
+    <div class="c4"> Hola</div>
+    <div class="c5"> border-color: #0f0 #f00 #00f;</div>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+.linkh1{
+    color:red
+}
+.linkh2{color:green}
+.linkp{color:blue}
+
+@import url(styleImport.css);
